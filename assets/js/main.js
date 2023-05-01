@@ -17,7 +17,6 @@ $(document).ready(function(){
             //При скролле до верхней позиции страницы скрываем все активные поп'апы и снимаем класс активности у кнопок
             $('.moved-aside__btn.active').removeClass('active');
             $('.popup.active').fadeOut(100).removeClass('active');
-            $('.moved-menu.active').removeClass('active');
         }
     })
 
