@@ -33,7 +33,7 @@ $(document).ready(function(){
             $('.search.active').removeClass('active');
         }
          // Если нажали вне выплывающего меню скрываем активные выплыващие менюшки
-         if(!event.target.closest("li[data-moved-menu='true']") && !event.target.closest(".moved-menu")){
+         if(!event.target.closest("*[data-moved-menu='true']") && !event.target.closest(".moved-menu")){
             let MenuType = $('.moved-menu.active').attr('data-type-menu');
 
             $(`button[data-type-menu='${MenuType}']`).removeClass('active');
@@ -62,6 +62,23 @@ $(document).ready(function(){
         }
     })
 
+    // Закрытие уведомлений
+    $('.notification__btn').on('click',function(){
+        let CurrentAction = $(this).attr('data-action');
+        switch (CurrentAction){
+            case "close":
+                try{
+                    let notification = $(this).parents('.notification');
+                    notification.slideUp(300,function(){
+                        $(this).remove();
+                    });
+                }
+                catch(error){
+
+                }
+            break;
+        }
+    })
 
     // Переключение состояния поиска
     $('.search__btn').on("click",function(){{

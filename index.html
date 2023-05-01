@@ -320,7 +320,7 @@
                 </button>
                 </div>
             </div>
-            <div class="main-header__element profile">
+            <div class="main-header__element profile" data-moved-menu="true">
                 <ul class="profile__list">
                     <li class="profile__item" data-moved-menu='true'>
                         <button class="profile__btn moved-menu-opener" data-type-menu="followed">
@@ -346,7 +346,7 @@
                         </button>
                     </li>
                 </ul>
-                <button class="main-aside__btn main-aside__btn_profile">
+                <button class="main-aside__btn main-aside__btn_profile moved-menu-opener" data-type-menu="profile">
                     <span class="notification-count">3</span>
                     <img src="assets/images/users/main-user.png" alt="" class="main-aside__img">
                      <i class="fa-solid fa-caret-down"></i>
@@ -636,15 +636,211 @@
             </ul>
         </div>
     </div>
+    <div class="moved-menu moved-menu_left" data-type-menu="profile">
+        <header class="moved-menu__header">
+            <div class="moved-menu__element">
+                <div class="moved-menu__text user">
+                    <span class="user__name">
+                        Elena Мастер Bond <img src="assets/images/main/pro.svg" alt="" class="">
+                    </span>
+                    <span class="user__mail">
+                        lenab85@yandex.ru
+                    </span>
+                    <span class="user__subs">
+                        <i class="fa-solid fa-user"></i> Подписчиков: 1018
+                    </span>
+                </div>
+            </div>
+            <button class="moved-menu__btn rounded-btn rounded-btn_white" data-action="close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </header>
+        <div class="moved-menu__body">
+            <ul class="moved-menu__list">
+                <li class="moved-menu__item_title">
+                    Закладки
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-star"></i></span>
+                        <span class="moved-menu__text">Избранные товары</span>
+                        <span class="moved-menu__count">24</span>
+                    </a>
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-users"></i></span>
+                        <span class="moved-menu__text">подписки на мастеров</span>
+                        <span class="moved-menu__count">5</span>
+                    </a>
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-regular fa-eye"></i></span>
+                        <span class="moved-menu__text">Просмотренные товары</span>
+                        <span class="moved-menu__count"></span>
+                    </a>
+                </li>
+                
+            </ul>
+            <ul class="moved-menu__list">
+                <li class="moved-menu__item_title">
+                    Заказы
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-bucket"></i></span>
+                        <span class="moved-menu__text">Мои покупки</span>
+                        <span class="moved-menu__count"></span>
+                    </a>
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-book"></i></span>
+                        <span class="moved-menu__text">Участие в аукционах</span>
+                        <span class="moved-menu__count"></span>
+                    </a>
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-star"></i></span>
+                        <span class="moved-menu__text">Мои заявки на бирже</span>
+                        <span class="moved-menu__count">2</span>
+                    </a>
+                    <button class="moved-menu__btn  rounded-btn_small rounded-btn rounded-btn_green"><i class="fa-solid fa-plus"></i></button>
+                </li>
+            </ul>
+            <ul class="moved-menu__list">
+                <li class="moved-menu__item_title">
+                    Коммуникации
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-ruble-sign"></i></span>
+                        <span class="moved-menu__text">Уведомления</span>
+                    </a>
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-book"></i></span>
+                        <span class="moved-menu__text">Сообщения</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="moved-menu__list">
+                <li class="moved-menu__item_title">
+                    Магазин
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-ruble-sign"></i></span>
+                        <span class="moved-menu__text">Мой магазин</span>
+                    </a>
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-book"></i></span>
+                        <span class="moved-menu__text">Мои товары и аукционы</span>
+                        <span class="moved-menu__count">12</span>
+                    </a>
+                    <button class="moved-menu__btn  rounded-btn_small rounded-btn rounded-btn_green"><i class="fa-solid fa-plus"></i></button>
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-book"></i></span>
+                        <span class="moved-menu__text">Мои отклики на бирже заявок</span>
+                        <span class="moved-menu__count">12</span>
+                    </a>
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-book"></i></span>
+                        <span class="moved-menu__text">Платежи</span>
+                        <span class="moved-menu__count moved-menu__count_green">390р.</span>
+                    </a>
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-book"></i></span>
+                        <span class="moved-menu__text">Опции продаж</span>
+                        <span class="moved-menu__count moved-menu__count_green"></span>
+                    </a>
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-book"></i></span>
+                        <span class="moved-menu__text">Отзывы</span>
+                        <div class="rating">
+                            <div class="rating__stars">
+                                <img src="assets/images/main/star_filled.svg" alt="">
+                                <img src="assets/images/main/star_filled.svg" alt="">
+                                <img src="assets/images/main/star_filled.svg" alt="">
+                                <img src="assets/images/main/star_filled.svg" alt="">
+                                <img src="assets/images/main/star_empty.svg" alt="">
+                            </div>
+                            <span class="rating__count">4.3</span>
+                        </div>
+                        <span class="moved-menu__count">12</span>
+                        <span class="moved-menu__count moved-menu__count_orange">+3</span>
+                    </a>
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-book"></i></span>
+                        <span class="moved-menu__text">Галерея мастера</span>
+                        <span class="moved-menu__count moved-menu__count_green"></span>
+                    </a>
+                    <button class="moved-menu__btn  rounded-btn_small rounded-btn rounded-btn_green"><i class="fa-solid fa-plus"></i></button>
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-book"></i></span>
+                        <span class="moved-menu__text">Статистика</span>
+                        <span class="moved-menu__count moved-menu__count_green"></span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="moved-menu__list">
+                <li class="moved-menu__item_title">
+                    Профиль мастера
+                </li>
+                <li class="moved-menu__item moved-menu__item_notification notification" data-type-notification="danger">
+                    <div class="rounded-btn rounded-btn_orange  rounded-btn_small"> <i class="fa-solid fa-exclamation"></i></div>
+                     <span class="notification__text">Верификация не пройдена</span>
+                     <button class="notification__btn rounded-btn rounded-btn_small" data-action="close"><i class="fa-solid fa-xmark"></i></button>
+                </li>
+                <li class="moved-menu__item moved-menu__item_notification notification" data-type-notification="success">
+                    <div class="rounded-btn rounded-btn_green  rounded-btn_small"><i class="fa-solid fa-exclamation"></i></div>
+                    <span class="notification__text">Верификация не пройдена</span>
+                    <button class="notification__btn rounded-btn rounded-btn_small" data-action="close"><i class="fa-solid fa-xmark"></i></button>
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-bucket"></i></span>
+                        <span class="moved-menu__text">Моя страница</span>
+                        <span class="moved-menu__count"></span>
+                    </a>
+                </li>
+                <li class="moved-menu__item">
+                    <a class="moved-menu__link" href="#">
+                        <span class="moved-menu__icon"><i class="fa-solid fa-book"></i></span>
+                        <span class="moved-menu__text">Настройки профиля</span>
+                        <span class="moved-menu__count"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <button class="moved-menu__btn moved-menu__btn_rectangle"><i class="fa-solid fa-arrow-right-from-bracket"></i> Выход</button> 
+    </div>
     <div class="moved-menu" data-type-menu="search">
         <div class="moved-menu__body">
             <input type="text" class="moved-menu__input" placeholder="Искать уникальные изделия">
             <button class="moved-menu__btn">Найти</button>
         </div>
     </div>
-    <aside class="main-aside">
-            <div class="main-aside__head">
-                <button class="main-aside__btn main-aside__btn_profile">
+    <aside class="main-aside"> 
+            <div class="main-aside__head" data-moved-menu="true">
+                <button class="main-aside__btn main-aside__btn_profile moved-menu-opener" data-type-menu="profile">
                        <img src="assets/images/users/main-user.png" alt="" class="main-aside__img">
                         <i class="fa-solid fa-caret-down"></i>
                 </button>
@@ -978,7 +1174,7 @@
             </button>
             </div>
          </div>
-         <div class="moved-aside__element profile">
+         <div class="moved-aside__element profile" data-moved-menu='true'>
             <ul class="profile__list">
                 <li class="profile__item" data-moved-menu='true'>
                     <button class="profile__btn moved-menu-opener" data-type-menu="followed">
@@ -1004,7 +1200,7 @@
                     </button>
                 </li>
             </ul>
-            <button class="main-aside__btn main-aside__btn_profile">
+            <button class="main-aside__btn main-aside__btn_profile moved-menu-opener" data-type-menu="profile">
                 <img src="assets/images/users/main-user.png" alt="" class="main-aside__img">
                  <i class="fa-solid fa-caret-down"></i>
             </button>
