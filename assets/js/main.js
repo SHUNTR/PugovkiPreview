@@ -1,10 +1,33 @@
 $(document).ready(function(){
 
-    
+    // Разделяем все цифры в статистике на блоки
+    function ChangeStats(){
+        $('.stats__number-wrapper').each(function(index,element){
+            let Numbers  = element.textContent.trim().split('').reverse();
+
+            let size = 3; //размер подмассива
+            let subarray = []; //массив в который будет выведен результат.
+            for (let i = 0; i <Math.ceil(Numbers.length/size); i++){
+                subarray[i] = Numbers.slice((i*size), (i*size) + size).reverse().join("");
+            }
+            Numbers = subarray;
+            // Очищаем место где будут хранится цифры    
+            $(this).empty();
+            // Вставляем число разделенные под 3 цифры
+            for(let i = Numbers.length-1; i>=0;i--){
+                $(this).append(`<span class='stats__number'>${Numbers[i]}</span>`);
+            }
+        })
+    }
+    ChangeStats();
+
+
+
     $(window).on("scroll resize",function(){
         // Получаем высоту хедера и сравниваем  с текущей позицией на экране
         let HeightHeader = document.querySelector('.main-header').offsetHeight;
-        if(GetCurrentYpos() > HeightHeader){
+        let HeightFooter = document.querySelector('.main-footer').offsetHeight;
+        if(GetCurrentYpos() > HeightHeader && (GetCurrentYpos()+$(window).height() < ($('html').height()) - HeightFooter)) {
             // показываем асайд
             ShowAside();
         }
@@ -34,7 +57,7 @@ $(document).ready(function(){
          // Если нажали вне выплывающего меню скрываем активные выплыващие менюшки
          if(!event.target.closest("*[data-moved-menu='true']") && !event.target.closest(".moved-menu")){
             let MenuType = $('.moved-menu.active').attr('data-type-menu');
-
+            $('body').removeClass('scrollBlock');
             $(`button[data-type-menu='${MenuType}']`).removeClass('active');
             $('.moved-menu.active').removeClass('active');
         }
@@ -107,6 +130,7 @@ $(document).ready(function(){
                 $('.submenu.active').removeClass('active');
                  $(`.moved-menu[data-type-menu='${CurrentTypeMenu}']`).addClass('active')
                  $(this).addClass('active');
+                 $('body').addClass('scrollBlock');
             }
             else{
                     $(`.moved-menu[data-type-menu='${CurrentTypeMenu}']`).removeClass('active');
@@ -143,8 +167,8 @@ $(document).ready(function(){
                 try {
                     CurentMenu.removeClass('active');
                     $(`button[data-type-menu='${MenuType}']`).removeClass('active');
+                    $('body').removeClass('scrollBlock');
                 } catch (error) {
-                    console.log("Произошла ошибка")
                 }
        }
     })
