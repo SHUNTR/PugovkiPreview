@@ -34,6 +34,8 @@ li,ul{
     list-style: none;
 }
 main{
+    padding-top: 40px;
+    padding-bottom: 40px;
     padding-right: 110px;
     @media (max-width:1919px) {
         padding-right: 80px;
@@ -41,6 +43,14 @@ main{
     @media (max-width:1365px) {
         padding-right: 0;
     }
+    @media (max-width:767px) {
+        padding-top: 0;
+    }
+    
+}
+section{
+    margin: 0 auto;
+    margin-bottom: 40px;
 }
 ::-webkit-scrollbar{
     width: 0px;
@@ -519,6 +529,7 @@ main{
 
 
         &_top{
+            z-index: 2;
             background-color: $black;
             color: $white;
             &:hover{
@@ -818,6 +829,8 @@ main{
 .rounded-btn{
     height: 50px;
     width: 50px;
+    cursor: pointer;
+    transition: .1s;
     display: flex;
     font-size: 16px;
     align-items: center;
@@ -883,6 +896,7 @@ main{
                                                                 // popup - попап
 .popup{
     background-color: $white;
+    z-index: 2;
     border-radius: 5px;
     box-shadow: 0 2px 5px 5px $blackshadow;
     position: absolute;
@@ -1116,9 +1130,6 @@ main{
     @media (max-width:1023px) {
         top: calc(100vh);
       }
-    @media (max-width:767px) {
-        z-index: 1;
-    }
       @media (max-width:1365px) {
         right: 0;
         width: 100%;
@@ -1157,6 +1168,14 @@ main{
             justify-content: center;
             overflow-y: scroll;  
         }
+
+        &[data-body-type="filled"]{
+            min-width: 566px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            gap: 40px;
+        }
         .moved-menu__btn,.moved-menu__link{
             width: 100%;
             font-size: 18px;
@@ -1178,7 +1197,14 @@ main{
             }
         }
     }
-    
+    &__wrapper{
+      display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        column-gap: 20px;
+        padding: 0 40px;
+        row-gap: 40px;
+    }
     &__element{
         display: flex;
         gap: 15px;
@@ -1479,7 +1505,10 @@ background-color: $lightblack;
                             }
                          }
                     }
-                 }
+                    }
+                    .button{
+                        margin: 0 auto;
+                    }
               }
             }
             // Второй элемент
@@ -1631,6 +1660,9 @@ background-color: $lightblack;
     display: inline-block;
     height: 49px;
     width: 49px;
+    @media (max-width:767px) {
+        margin-right: 0px;
+    }
     margin-right: 20px;
 }
 &__text{
@@ -1663,12 +1695,20 @@ background-color: $lightblack;
         }
     }
     &_gray{
-        background-color: $gray!important;
+        background-color: $lightgray!important;
         color: $black!important;
+        &:hover,&.active{
+            background-color: $black!important;
+             color: $white!important;
+        }
     }
     &_black{
         background-color: $black!important;
         color: $white!important;
+        &:hover{
+                background-color: $orange!important;
+                color:$white!important;     
+        }
         &.active{
             background-color: $orange!important;
             color:$white!important;
@@ -1709,6 +1749,10 @@ background-color: $lightblack;
             flex-direction: column;
         }
     }
+    &__body{
+        display: flex;
+        gap: 20px;
+    }
     &__link{
         transition: .1s;
         color: $white;
@@ -1729,7 +1773,10 @@ background-color: $lightblack;
     &__text{
         flex: 0 0 auto
     }
-
+    &__img{
+        height: 60px;
+        width: 60px;
+    }
     @media (max-width:1365px) {
         align-items: flex-start;
     }
@@ -1762,3 +1809,1051 @@ background-color: $lightblack;
         }
     }
 }
+// Стилизация свипера
+.swiper{
+    max-width: 1920px;
+    padding: 0px 200px!important;
+    @media (max-width:1366px) {
+        padding: 0px 117px!important;
+    }
+    @media (max-width:1024px) {
+        padding: 0px 60px!important;
+    }
+    overflow: hidden!important;
+    margin: 0 auto;
+    &.main-swiper{
+        &.hide-768{
+            @media (max-width:767px) {
+                display: none;
+            }
+        }
+        @media (max-width:1024px) {
+            padding: 0px 0px!important;
+        }
+        .swiper-wrapper{
+            max-width: 1500px!important;
+        }
+        .swiper-slide{
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            
+        }
+        .swiper__img{
+            @media (max-width:768px) {
+                height: 75px;
+            }
+            @media (max-width:320px) {
+                height: 50px;
+            }
+            height: 100px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    &__button{
+        box-shadow: 0 0 5px 5px $blackshadow;
+        &-prev{
+            position: relative;
+            left: -10px;
+        }
+        &-next{
+            position: relative;
+            right:-10px;
+        }
+        &[aria-disabled="true"]{
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+    &__btns-wrapper{
+        position: absolute;
+        top:50%;
+        left: 0;
+        width: 100%;
+        padding: 0px 200px;
+        max-width: 1930px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        z-index: 2;
+        height: 0;
+        @media (max-width:1366px) {
+            padding: 0px 117px!important;
+        }
+        @media (max-width:1024px) {
+            padding: 0px 60px!important;
+        }
+        @media (max-width:767px) {
+            display: none;
+        }
+    }
+    &-pagination{
+        position: static!important;
+        &-bullet{
+            margin-right: 30px!important;
+            transition: .3s!important;
+            background-color: $gray!important;
+            &-active{
+                transition: .3s!important;
+                background-color: $orange!important;
+                width: 10px!important;
+                height: 10px!important;
+            }
+        }
+    }
+    &.category-swiper{
+        .swiper-wrapper{
+            max-width: 1500px!important;
+            width: 100%!important;
+        }
+        .swiper-slide{
+            max-height: 150px;
+            display: flex;
+            position: relative;
+            border-radius: 5px;
+        }
+        .swiper__img{
+            filter: brightness(.6);
+            width: 100%;
+            object-fit: cover;
+        }
+        .swiper__text{
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            z-index: 1;
+            font-weight: bold;
+            max-width: 160px;
+            font-size: 22px;
+            color: $white;
+            text-shadow:  1px 1px 3px $black;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &.items-swiper{
+        .swiper-wrapper{
+           height: 100%;
+           align-items: stretch;
+        }
+    }
+    &-slide{
+        height: auto!important;
+    }
+}
+// стартовая секция на главное странице
+.start{
+    display: none;
+    @media (max-width:767px) {
+        display: flex;
+        flex-direction: column;
+    }
+    &__title{
+        font-size: 25px!important;
+        text-align: center;
+        max-width: 500px;
+    }
+    &__hgroup{
+        display: flex;
+        gap: 10px!important;
+        align-items: center;
+        flex-direction: column;
+        img{
+            width: 100%;
+        }
+    }
+    .search{
+        width: 100%;
+        margin: 0!important;
+        max-width: 100%;
+        padding: 20px 30px;
+        &__input{
+            padding-left: 15px;
+            width: 100%;
+        }
+        &__body{
+            width: 100%;
+        }
+    }
+    &__btn{
+        padding: 15px 30px;
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        font-size: 16px;
+        font-weight: bold;
+        color:$black;
+        background-color: $white;
+    }
+    &__body{
+        display: flex;
+        flex-direction: column;
+    }
+    &__item{
+        border-top: $lightgray 1px solid    ;
+        &:last-of-type{
+            border-bottom: 1px solid $lightgray;
+        }
+    }
+}
+// Секция ярмарка
+.fair{
+    @media (max-width:767px) {
+        display: none;
+    }
+    margin-top: 40px; 
+    max-width: 1920px;
+    &__stats{
+        margin-bottom: 40px;
+        padding: 0px 200px;
+        @media (max-width:1366px) {
+            padding: 0px 117px;
+        }
+        @media (max-width:1024px) {
+            padding: 0px 60px;
+        }
+        color: $black;
+        &.stats{
+            @media (max-width:1365px) {
+                justify-content: center;
+            }
+        }
+        .stats{
+            &__element{
+                align-items: center;
+                font-weight: bold;
+                @media (max-width:1919px) {
+                    align-items: flex-start;
+                   }
+                   @media (max-width:1365px) {
+                    align-items: center;
+                }
+            }
+            &__body{
+                align-items: center;
+               @media (max-width:1919px) {
+                flex-direction: column;
+                align-items: flex-start;
+               }
+               @media (max-width:1365px) {
+               align-items: center;
+               text-align: center;
+                }
+            }
+            &__link{
+                color:$orange;
+                &:hover{
+                    color: $green;
+                }
+            }
+            &__number-wrapper{
+                align-items: center;
+                font-size: 20px;
+                padding: 5px 0;
+                gap: 5px;
+            }
+            &__number{
+                background-color: $green;
+                border-radius: 4px;
+                padding: 0 9px;
+                font-weight: bold;
+                color:$white;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+    .hgroup{
+        margin-bottom: 40px;
+        padding: 0px 200px;
+        @media (max-width:1366px) {
+            padding: 0px 117px;
+        }
+        @media (max-width:1024px) {
+            padding: 0px 60px;
+        }
+    }
+}
+// Заголовоки
+.hgroup{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @media (max-width:768px) {
+        text-align: center;
+    }
+
+    &__title{
+        font-size: 50px;
+        color:$black;
+        @media (max-width:1024px) {
+            font-size: 40px;
+        }
+        @media (max-width:767px) {
+            flex-direction: column-reverse;
+            align-items: center;
+            display: flex;
+        }
+    }
+
+    &__subtitle{
+        font-size: 25px;
+        color:$gray;
+        
+    }
+    .button{
+        margin-left: auto;
+    }
+}
+// underline
+.underline{
+    height: 5px; 
+    width: 100vw;
+    position: relative;
+    background-repeat: repeat;
+    &_type1{
+        background-image: url('../images/main/underline1.svg');
+    }
+    &_type2{
+        background-image: url('../images/main/underline2.svg');
+        height: 1px;
+    }
+    &_type3{
+        background-image: url('../images/main/underline3.svg');
+    }
+    margin: 40px 0;
+}
+// аукционы
+.actions{
+    max-width: 1920px;
+    .hgroup{
+        flex-direction: row;
+        align-items: center;
+        padding: 0 200px;
+        margin-bottom:40px;
+        @media (max-width:1366px) {
+            padding: 0px 117px;
+        }
+        @media (max-width:1024px) {
+            padding: 0px 60px;
+        }
+        @media (max-width:1023px) {
+            justify-content: center;
+            .button{
+                display: none;  
+            }
+        }
+        &__title{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        &__img{
+            height: 50px;
+        }
+
+    }
+       @media (max-width:767px) {
+            .swiper{
+                display: none!important;
+            }
+           
+        }
+    &__btn{
+        display: none;
+        @media (max-width:1023px) {
+            display: flex;
+            margin: 0 auto;   
+            margin-top: 40px;
+        }
+    }
+    &__body{
+        gap: 25px;
+        display: none;
+        justify-content: center;
+        @media (max-width:767px) {
+                display: flex; 
+        }
+        padding: 25px;
+        flex-wrap: wrap;
+    }
+}
+// Описание
+.desc{
+    max-width: 1920px;
+    padding: 80px 210px;
+    @media (max-width:1366px) {
+        padding: 80px 117px;
+    }
+    @media (max-width:1024px) {
+        padding: 40px 100px;
+    }
+    @media (max-width:768px) {
+        padding: 60px;
+    }
+    @media (max-width:767px) {
+       display: none;
+    }
+    &__body{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        font-size: 14px; 
+        color:$black
+    }
+}
+// Новые предметы
+.new-items{
+     max-width: 1920px;
+     @media (max-width:767px) {
+        .swiper{
+            display: none!important;
+        }
+       
+    }
+    .hgroup{
+        flex-direction: row;
+        align-items: center;
+        padding: 0 200px;
+        margin-bottom:40px;
+        @media (max-width:1366px) {
+            padding: 0px 117px;
+        }
+        @media (max-width:1024px) {
+            padding: 0px 60px;
+        }
+        @media (max-width:1023px) {
+            justify-content: center;
+            .button{
+                display: none;  
+            }
+        }
+
+        &__title{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        &__img{
+            height: 50px;
+        }
+
+    }
+    &__btn{
+        display: none;
+        @media (max-width:1023px) {
+            display: flex;
+            margin: 0 auto;   
+            margin-top: 40px;
+        }
+    }
+    &__body{
+        justify-content: center;
+        display: none;
+        @media (max-width:767px) {
+            display: flex; 
+        }
+        gap: 25px;
+        padding: 25px;
+        flex-wrap: wrap;
+    }
+}
+// Напишите нам
+.write-us{
+    max-width: 1920px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 0 200px;
+    margin-bottom:40px;
+        @media (max-width:1366px) {
+            padding: 0px 117px;
+        }
+        @media (max-width:1024px) {
+            padding: 0px 60px;
+        }
+        @media (max-width:768px) {
+            flex-direction: column;
+        }
+        @media (max-width:500px) {
+            padding:0px;
+        }
+        &__btn{
+            font-size: 18px;
+            flex: 0 0 auto;
+            background-color: $white;
+            padding: 15px 45px;
+            display: flex;
+            font-weight: bold;
+            align-items: center;
+            gap: 10px;
+            transition: .3s;
+            box-shadow: 0 0 10px 10px $blackshadow;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+        &__wrapper{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 811px;
+        }
+        &__element{
+            @media (max-width:768px) {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+            width: 100%;
+            justify-content: space-between;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        &__rating{
+            display: flex;
+            gap: 20px;
+            img{
+                height: 24px;
+                width: 24px;
+            }
+            @media (max-width:768px) {
+                      justify-content: center;
+            }
+        }
+        &__text{
+            font-weight: bold;
+            font-size: 20px;
+            &:nth-of-type(2){
+                color: $gray;
+            }
+        }
+        &__img{
+            width: 226px;
+            height: 176px;
+        }
+    }
+// Специально для вас
+.special{
+    max-width: 1920px;
+    padding: 0 200px;
+    margin-bottom:40px;
+    @media (max-width:1366px) {
+        padding: 0px 117px;
+    }
+    @media (max-width:1024px) {
+        padding: 0px 60px;
+    }
+    @media (max-width:768px) {
+        padding: 0px 30px;
+    }
+    @media (max-width:420x) {
+        padding: 0px 0px;
+    }
+    &__body{
+        margin: 0 auto;
+        row-gap: 20px;
+        padding-top: 40px;
+        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+        @media (max-width:768px) {
+            place-items: center;
+        }
+    }
+    &__btn{
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+    &__filters{
+        margin-top: 40px;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        @media (max-width:768px) {
+            justify-content: center;
+        }
+        .special__btn{
+            flex:  0 0 auto;
+            font-weight: bold;
+            padding: 10px 15px;
+            margin: 0 0;
+        }
+    }
+}
+// Последние проосмотренные предметы
+.last-view{
+    max-width: 1920px;
+    padding: 0 200px;
+    margin-bottom:40px;
+        @media (max-width:1366px) {
+            padding: 0px 117px;
+        }
+        @media (max-width:1024px) {
+            padding: 0px 60px;
+        }
+    &__hgroup{
+       flex-direction: row;
+       align-items: center;
+       flex-wrap: wrap;
+       gap: 40px;
+    
+    }
+    &__subtitle{
+        font-weight: bold;
+        color: $black;
+    }
+    &__btn{
+        color: $black;
+        text-decoration: underline;
+    }
+    &__body{
+        margin-top: 40px;
+        display: flex;
+        gap: 20px;
+    }
+    &__img{
+        width: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+    }
+    &__price-wrapper{
+        text-align: center;
+        display: flex;
+        flex-direction: column-reverse;
+        color: $black;
+    }
+    &__fullprice{
+        &:not(:empty){
+            margin-top: 20px;
+            text-decoration: line-through;
+        }
+    }
+    &__fullprice:not(:empty) ~ &__price{
+       color: $orange;
+       font-weight: bold;
+    }
+    @media (max-width:980px) {
+        &__item{
+            display: none;
+        }
+        &__body{
+            justify-content: space-between
+        }
+        @for $i from 1 through 5{
+            color:$i;
+            .last-view__item:nth-of-type(#{$i}){
+                max-width: 86px;
+                gap: 26px;
+                display: flex;
+                flex-direction: column;
+            
+        }
+    }
+    @media (max-width:500px) {
+        &__body{
+           display: grid;
+           grid-template-columns: 1fr 1fr 1fr;
+        }
+        &__item{
+            display: block;
+            max-width: 86px;
+        }
+        &__price-wrapper{
+            display: none;
+        }
+        &__hgroup{
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+}
+}
+//Найти подарок
+.findpresent{
+    background-color: $rosy;
+    width: 100%;
+    display: flex;
+    padding-top: 40px;
+    justify-content: center;
+    &__hgroup{
+    }
+    &__subtitle{
+        &:nth-of-type(2){
+            display: none;
+            @media (max-width:1365px) {
+                display: block!important;
+            }
+        }
+        @media (max-width:1365px) {
+            display: none;
+        }
+    }
+    &__title{
+        gap: 20px;
+        display: flex;
+        align-items: center;
+    }
+    &__body{
+        padding: 0 200px;
+        margin-bottom:40px;
+        display: flex;
+        justify-content: space-between;
+        @media (max-width:1366px) {
+            padding: 0px 117px;
+        }
+        @media (max-width:1365px) {
+            padding-top: 40px;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        @media (max-width:1024px) {
+            padding: 0px 60px;
+        }
+        @media (max-width:768px) {
+            padding: 0px 30px;
+        }
+        @media (max-width:420x) {
+            padding: 0px 0px;
+        }
+        max-width: 1920px;
+        width: 100%;
+    }
+    &__img{
+        width: 100%;
+        max-width: 811px;
+        max-height: 400px;
+    }
+    &__list{
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        max-width: 510px;
+        @media (max-width:1365px) {
+            justify-content: center;
+        }
+        @media (max-width:767px) {
+            gap: 0;
+        }
+    }
+
+    &__element{
+        min-width: 420px;
+        @media (max-width:1365px) {
+            min-width: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+    &__item{
+        @media (max-width:767px) {
+            width: 100%;
+            &:nth-last-of-type(2){
+                margin-bottom: 40px;
+                box-shadow: 0 5px 5px 2px $lightgray;
+            }
+         }
+
+    }
+    &__title{
+        @media (max-width:767px) {
+            padding-top: 40px;
+            flex-direction: column-reverse;
+            display: flex;
+         }
+    }
+    &__btn{
+        padding: 20px;
+        align-items: center;
+        display: flex;
+        gap: 10px;
+        border-radius: 5px;
+        background-color: $white;
+        box-shadow: 0 2px 5px 5px $lightgray;
+        border: 1px solid $lightgray;
+        @media (max-width:767px) {
+           width: 100%;
+           box-shadow: none;
+        }
+        i{
+            &:last-of-type{
+                margin-left: auto;
+            }
+        }
+    }
+    .button{
+        padding: 20px 40px;
+        border-radius: 85px;
+        @media (max-width:767px) {
+            justify-content: center;
+         }
+    }
+}
+// Предмет
+.item
+{  
+    position: relative;
+    max-width: 240px;
+    height: auto!important;
+    justify-content: space-between;
+    display: flex!important;
+    flex-direction: column;
+    &__img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        @media (max-width:767px) {
+            height: 240px;         
+          }
+        }
+    &__img-wrapper{
+        display: block;
+        min-height: 240px;
+        position: relative;
+        overflow: hidden;
+        @media (max-width:767px) {
+            height: 240px;
+        }
+           
+    }
+    &__body{
+        height: 100%;
+        padding: 15px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .favorite-btn{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        height: 20px;
+        box-shadow: none;
+        width: 20px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 18px;
+        background-color: transparent;
+    }
+    &__date-time{
+        color: $green;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    &__avatar{
+        height: 26px;
+        width: 26px;
+        border-radius: 50px;
+        object-fit: cover;
+        object-position: center;
+    }
+    &__user{
+        display: flex;
+        gap:5px;
+    }
+    &__user-name{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-width: 75px;
+        color: $black;
+        overflow: hidden;
+        &::before{
+            overflow-x: hidden;
+            content: "";
+            height: 19px;
+            width: 35px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            box-shadow: -15px 0px 11px 5px $white inset;
+        }
+    }
+    &__user-status{
+        width: 20px;
+    }
+    &__likes,&__views{
+        color: $gray;
+        display: flex;
+        gap: 10px;
+    }
+    &__price-status{
+        text-align: right;
+        font-size: 12px;
+        color: $gray;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+    &__name{
+        max-width: 120px;
+        text-align: center;
+        display: block;
+        width: fit-content;
+        height: fit-content;
+        padding: 5px 0;
+        &[date-decoration="fiiled"]{
+            background-color: $yellow;
+        }
+        font-size: 14px;
+        font-weight: bold;
+    }
+    &__price{
+        text-align: right;
+        font-size: 16px;
+        color: $gray;
+        font-weight: bold;
+        display: flex;
+        gap: 5px;
+        justify-content: flex-end;
+        &[data-status="upper"]{
+            color:$orange;
+            .fa-solid.fa-caret-right{
+                display: none;
+            }
+            .fa-solid.fa-sort-up{
+                &::before{
+                    display: flex;
+                    align-items: center;
+                    margin-top: 5px;
+                }
+            }
+        }
+        &[data-status=":start"]{
+            .fa-solid.fa-caret-right{
+                display: block;
+            }
+            .fa-solid.fa-sort-up{
+                display: none;
+            }
+        }
+    }
+    &__element{
+        &:nth-of-type(2){
+            margin-top: auto;
+        }
+        &:nth-of-type(1){
+            display: flex;
+            justify-content: space-between;
+           }
+    }
+    &__type{
+        width: fit-content;
+        height: fit-content;
+        font-size: 12px;
+        display: block;
+    }
+    // Тип предмета  - аукцион
+    &[data-item-type="action"]{
+        height: 100%;
+        .item__body{
+            height: 100%;
+        }
+        .item__element{
+            &:nth-of-type(1){
+                display: grid;
+                row-gap: 10px;
+                grid-template-rows: 1fr 3fr;
+                grid-template-columns: 1fr 1fr;
+               }
+        }
+    }
+    // Неактивный аукцион
+    &[data-type-action="inactive"]{
+        .item__type{
+            background-color: $gray;
+            color: $white;
+            padding: 0px 5px;
+            border-radius: 15px;
+        }
+    }
+    // Активный аукцион
+    &[data-type-action="active"]{
+        .item__type{
+            background-color: $green;
+            color: $white;
+            padding: 0px 5px;
+            border-radius: 15px;
+        }
+        .item__date-time{
+            color:$gray;
+        }
+    }
+    // Статус "Избранное"
+    &[data-favorite='true']{
+        .favorite-btn{
+            background-image: url(../images/main/heart-icon__filled.svg);
+        }
+       
+    }   
+    &[data-favorite='false']{
+        .favorite-btn{
+            background-image: url(../images/main/heart.svg);
+        }
+    }
+    .discount{
+        position: absolute;
+        &:not(:empty){
+            border-radius: 5px;
+            right: -17px;
+            bottom: -10px;
+            transform: rotate(-10deg);
+            padding: 10px 25px;
+            background-color: $orange;
+            color: $white;
+            font-weight: bold;
+            font-size: 25px;
+        }
+    }
+}
+// Селект
+li[data-select='true']{
+    position: relative;
+}
+.select{
+    width: 100%;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    transition: .3s;
+    top: 70px;
+    left: 0;
+    &.active{
+        display: block;
+        top: 60px;
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+    }
+    &__btn{
+        padding: 20px;
+        align-items: center;
+        display: flex;
+        gap: 10px;
+        background-color: $white;
+        width: 100%;
+        transition: .3s;
+        border: 1px solid $lightgray;
+        &:hover{
+            background-color: $lightgray;
+        }
+    }
+}
+
