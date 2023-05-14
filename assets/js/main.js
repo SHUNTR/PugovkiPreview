@@ -204,7 +204,7 @@ $(document).ready(function(){
     $('.favorite-btn').on('click',function(){
 
         let CurrentItem =  CreateObjectItem($(this).parents('.item'));
-        let Body = $('.moved-menu .moved-menu__body');
+        let Body = $('.moved-menu[data-type-menu="followed"] .moved-menu__body');
         let typeBody = Body.attr('data-body-type');
 
         if(CurrentItem.favorite == "false"){
@@ -536,7 +536,7 @@ function GetHeightPage(){
 // Функция удаления из избранного
 function DeleteFavorite(event){
    let item = event.target.closest('.item');
-   let Body = $('.moved-menu .moved-menu__body');
+   let Body = $('.moved-menu[data-type-menu="followed"] .moved-menu__body');
    let id = item.getAttribute('data-id-item');
    item.remove();
    ChangeCountNotfication('followed','minus');
