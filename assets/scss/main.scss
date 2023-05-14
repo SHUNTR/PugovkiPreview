@@ -1202,7 +1202,7 @@ section{
     }
     &__wrapper{
         display: grid;
-        grid-template-columns: repeat(auto-fill,250px);
+        grid-template-columns: repeat(auto-fill,230px);
         width: 100%;
         column-gap: 20px;
         padding: 0 40px;
@@ -1221,6 +1221,7 @@ section{
         box-shadow: 0 0 10px 5px $blackshadow;
         height: 40px;
         width: 40px;
+        flex: 0 0 auto;
         &_rectangle{
             gap: 5px;
             text-align: center;
