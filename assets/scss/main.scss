@@ -1175,6 +1175,9 @@ section{
             flex-direction: column;
             height: 100%;
             gap: 40px;
+            @media (max-width:610px) {
+                min-width: auto;
+            }
         }
         .moved-menu__btn,.moved-menu__link{
             width: 100%;
@@ -1198,12 +1201,16 @@ section{
         }
     }
     &__wrapper{
-      display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,250px);
         width: 100%;
         column-gap: 20px;
         padding: 0 40px;
         row-gap: 40px;
+        @media (max-width:610px) {
+            grid-template-columns: 1fr;
+            place-items: center;
+        }
     }
     &__element{
         display: flex;

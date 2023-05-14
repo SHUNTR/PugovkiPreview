@@ -1432,6 +1432,12 @@ section {
     gap: 40px;
 }
 
+@media (max-width: 610px) {
+    .moved-menu__body[data-body-type=filled] {
+        min-width: auto;
+    }
+}
+
 .moved-menu__body .moved-menu__btn, .moved-menu__body .moved-menu__link {
     width: 100%;
     font-size: 18px;
@@ -1453,12 +1459,19 @@ section {
 
 .moved-menu__wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, 250px);
     width: 100%;
     -moz-column-gap: 20px;
     column-gap: 20px;
     padding: 0 40px;
     row-gap: 40px;
+}
+
+@media (max-width: 610px) {
+    .moved-menu__wrapper {
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
 }
 
 .moved-menu__element {
