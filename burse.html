@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/cb18628afa.js" crossorigin="anonymous"></script>
-    <title>Пуговки - Главная страница</title></head>
+    <title>Пуговки - Каталог изделий</title>    <link rel="stylesheet" href="assets/css/burse.css">
+</head>
 
 <body>
     <header class="main-header" id="main-header">
@@ -1561,7 +1562,88 @@
     </aside>
     <a class="main-aside__btn_top moved rounded-btn" href="#main-header">
         <i class="fa-solid fa-caret-up"></i>
-    </a>    <main class="main-container">
+    </a>    <div class="moved-menu" data-type-menu="AddBurse">
+        <header class="moved-menu__header">
+            <div class="moved-menu__element">
+                <span class="moved-menu__icon">
+                    <i class="fa-regular fa-heart"></i>
+                </span>
+                <h2 class="moved-menu__title">
+                    Добавить заявку
+                </h2>
+            </div>
+            <button class="moved-menu__btn rounded-btn rounded-btn_white" data-action="close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </header>
+        <div class="moved-menu__body">
+            <p class="moved-menu__text">
+                Разместите свою задачу на бирже. Ваш проект станет видимым для тысяч фрилансеров, и некоторые из них сделают
+                вам предложения. Изучите их рейтинг, портфолио и выберите лучших из них. Подтвердите заказ, когда будете
+                удовлетворены результатом на 100%. Только после этого оплата спишется в пользу продавца.
+            </p>
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">Название задачи</span>
+                <input type="text" class="moved-menu__input" placeholder="Введите название задачи">
+            </div>
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">Выберите категорию</span>
+                <div class="select" data-select="true">
+                    <button class="select-opener moved-menu__btn" type="button">
+                        <span class="select__text">
+                            Категория
+                        </span>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </button>
+                    <div class="select__body">
+                        <ul class="select__list">
+                            <li class="select__item">
+                                <button class="select__btn" type="button">
+                                    Одежда и обувь
+                                </button>
+                            </li>
+                            <li class="select__item">
+                                <button class="select__btn" type="button">
+                                    Куклы и игрушки
+                                </button>
+                            </li>
+                            <li class="select__item">
+                                <button class="select__btn" type="button">
+                                    Аксесуары
+                                </button>
+                            </li>
+                            <li class="select__item">
+                                <button class="select__btn" type="button">
+                                    Украшения
+                                </button>
+                            </li>
+                            <li class="select__item">
+                                <button class="select__btn" type="button">
+                                    Красота и здоровье
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">Детальное описание задачи</span>
+                <textarea class="moved-menu__text-area"
+                    placeholder="Опишите, что именно вам нужно, в каком объеме и за какой срок">
+                </textarea>
+            </div>  
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">Цена не более,руб</span>
+                <input type="number" class="moved-menu__input" inputmode="numeric">
+            </div>
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">Загрузите пример похожего изделия</span>
+                <input type="file" class="moved-menu__input" inputmode="">
+            </div>
+            <button class="moved-menu__btn" data-action="AddBurse">Отправить на проверку</button>  
+        </div>
+    </div>
+    <main class="main-container">
         <!-- Slider main container -->
         <div class="swiper main-swiper">
             <!-- Additional required wrapper -->
@@ -1586,1824 +1668,512 @@
                 </div>
               </div>
             <div class="swiper-pagination"></div>
-          </div>    <section class="start">
-            <div class="start__hgroup hgroup">
-                <h1 class="start__title hgroup__title">
-                    Ярмарка авторских изделий, созданных мастерами со всей страны
-                </h1>
-                <img src="assets/images/main/fair.svg" alt="">
-            </div>
-            <div class="start__body">
-                <div class="start__element search">
-                    <div class="search__body">
-                        <input type="text" class="search__input" placeholder="Искать уникальные изделия">
-                        <button class="search__btn">
-                            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>    <nav class="breadcrumbs">
+            <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item">
+                    <a href="index.html" class="breadcrumbs__link">
+                        Главная
+                    </a>
+                </li>
+                <li class="breadcrumbs__item">
+                    <a href="" class="breadcrumbs__link">
+                        Каталог изделий
+                    </a>
+                </li>     
+            </ul>
+        </nav>    <section class="catalog">
+            <h1 class="catalog__title">Биржа заявок</h1>
+            <div class="catalog__body">
+                <div class="catalog__selected-filters">
+                    <div class="catalog__filter-wrapper">
+                    </div>
+                    <div class="catalog__regions">
+                        <button class="catalog__btn moved-menu-opener" data-type-menu="filter" data-moved-menu="true">
+                            Фильтр
+                            <span class="catalog__count"></span>
+                            <i class="fa-solid fa-sort"></i>
                         </button>
-                    </div>
-                </div>
-                <ul class="start__list">
-                    <li class="start__item" data-moved-menu="true">
-                        <button class="start__btn moved-menu-opener" data-type-menu="catalog" type="button">
-                            <i class="fa-solid fa-grip"></i> Каталог изделий
-                        </button>
-                    </li>
-                    <li class="start__item">
-                        <a href="" class="start__btn">
-                            <i class="fa-solid fa-hammer"></i> Аукционы
-                        </a>
-                    </li>
-                    <li class="start__item">
-                        <a href="" class="start__btn">
-                            <i class="fa-regular fa-star"></i> Заказать изделие
-                        </a>
-                    </li>
-                    <li class="start__item">
-                        <a href="" class="start__btn">
-                            <i class="fa-regular fa-comment"></i> Найти мастера
-                        </a>
-                    </li>
-                    <li class="start__item">
-                        <a href="" class="start__btn">
-                            <i class="fa-regular fa-star"></i> Подобрать подарок
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="fair">
-            <div class="fair__hgroup hgroup">
-                <h1 class="fair__title hgroup__title">
-                    Ярмарка товаров ручной работы
-                </h1>
-                <p class="fair__subtitle hgroup__subtitle">
-                    Интернет-магазин авторских изделий, созданных мастерами со всей страны
-                </p>
-            </div>
-            <div class="fair__stats stats">
-                <div class="stats__element">
-                    <img src="assets/images/main/stats1.svg" alt="" class="stats__img">
-                    <div class="stats__body">
-                        <div class="stats__number-wrapper">
-                            7010901
-                        </div>
-                        <span class="stats__text">
-                            Товаров <br> в
-                            <a href="" class="stats__link">
-                                каталоге
-                            </a>
-                        </span>
-                    </div>
-                </div>
-                <div class="stats__element">
-                    <img src="assets/images/main/stats2.svg" alt="" class="stats__img">
-                    <div class="stats__body">
-                        <div class="stats__number-wrapper">
-                            3098
-                        </div>
-                        <span class="stats__text">
-                            Таллантлевых<br>
-                            <a href="" class="stats__link">
-                                Мастеров
-                            </a>
-                        </span>
-                    </div>
-                </div>
-                <div class="stats__element">
-                    <img src="assets/images/main/stats3.svg" alt="" class="stats__img">
-                    <div class="stats__body">
-                        <div class="stats__number-wrapper">
-                            674
-                        </div>
-                        <span class="stats__text">
-                            Заявок<br> на
-                            <a href="" class="stats__link">
-                                бирже
-                            </a>
-                        </span>
-                    </div>
-                </div>
-                <div class="stats__element">
-                    <img src="assets/images/main/stats4.svg" alt="" class="stats__img">
-                    <div class="stats__body">
-                        <div class="stats__number-wrapper">
-                            15030728
-                        </div>
-                        <span class="stats__text">
-                            Пользователей<br> на пуговках
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <!-- Slider main container -->
-            <div class="swiper category-swiper">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <a class="swiper-slide" href="">
-                        <img src="assets/images/main/category1.png" alt="" class="swiper__img">
-                        <span class="swiper__text">
-                            Куклы и игрушки
-                        </span>
-                    </a>
-                    <a class="swiper-slide" href="">
-                        <img src="assets/images/main/category2.png" alt="" class="swiper__img">
-                        <span class="swiper__text">
-                            Аксессуары
-                        </span>
-                    </a>
-                    <a class="swiper-slide" href="">
-                        <img src="assets/images/main/category3.png" alt="" class="swiper__img">
-                        <span class="swiper__text">
-                            Украшения
-                        </span>
-                    </a>
-                    <a class="swiper-slide" href="">
-                        <img src="assets/images/main/category4.png" alt="" class="swiper__img">
-                        <span class="swiper__text">
-                            Красота и здоровье
-                        </span>
-                    </a>
-                    <a class="swiper-slide" href="">
-                        <img src="assets/images/main/category5.png" alt="" class="swiper__img">
-                        <span class="swiper__text">
-                            Скрапбулинг
-                        </span>
-                    </a>
-                    <a class="swiper-slide" href="">
-                        <img src="assets/images/main/category6.png" alt="" class="swiper__img">
-                        <span class="swiper__text">
-                            Одежда и обувь
-                        </span>
-                    </a>
-                    <a class="swiper-slide" href="">
-                        <img src="assets/images/main/category7.png" alt="" class="swiper__img">
-                        <span class="swiper__text">
-                            Дом и интерьер
-                        </span>
-                    </a>
-                    <a class="swiper-slide" href="">
-                        <img src="assets/images/main/category1.png" alt="" class="swiper__img">
-                        <span class="swiper__text">
-                            Куклы и игрушки
-                        </span>
-                    </a>
-                    <a class="swiper-slide" href="">
-                        <img src="assets/images/main/category2.png" alt="" class="swiper__img">
-                        <span class="swiper__text">
-                            Аксессуары
-                        </span>
-                    </a>
-                    <a class="swiper-slide" href="">
-                        <img src="assets/images/main/category3.png" alt="" class="swiper__img">
-                        <span class="swiper__text">
-                            Украшения
-                        </span>
-                    </a>
-                    <a class="swiper-slide" href="">
-                        <img src="assets/images/main/category4.png" alt="" class="swiper__img">
-                        <span class="swiper__text">
-                            Красота и здоровье
-                        </span>
-                    </a>
-                    <a class="swiper-slide" href="">
-                        <img src="assets/images/main/category5.png" alt="" class="swiper__img">
-                        <span class="swiper__text">
-                            Скрапбулинг
-                        </span>
-                    </a>
-                    <a class="swiper-slide" href="">
-                        <img src="assets/images/main/category6.png" alt="" class="swiper__img">
-                        <span class="swiper__text">
-                            Одежда и обувь
-                        </span>
-                    </a>
-                    <a class="swiper-slide" href="">
-                        <img src="assets/images/main/category7.png" alt="" class="swiper__img">
-                        <span class="swiper__text">
-                            Дом и интерьер
-                        </span>
-                    </a>
-                </div>
-                <div class="swiper__btns-wrapper" data-type-centered="block">
-                    <div class="swiper__button swiper__button-prev rounded-btn rounded-btn_white">
-                        <i class="fa-solid fa-caret-left"></i>
-                    </div>
-                    <div class="swiper__button swiper__button-next rounded-btn rounded-btn_white">
-                        <i class="fa-solid fa-caret-right"></i>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="underline underline_type1"></div>
-        <section class="actions">
-            <div class="actions__hgroup hgroup">
-                <h1 class="actions__title hgroup__title">
-                    Аукционы
-                    <img src="assets/images/main/hammer.svg" alt="" class="hgroup__img">
-                </h1>
-                <a href="" class="button button_green">Все аукционы</a>
-            </div>
-            <div class="swiper items-swiper">
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="1" data-item-type="action"
-                        data-type-action="inactive">
-                        <a class="item__img-wrapper" href="auction.html">
-                            <img src="assets/images/items/item1.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__type">
-                                    Аукцион
-                                </span>
-                                <span class="item__price-status" data-status="start">
-                                    Начальная ставка
-                                </span>
-                                <span class="item__name" date-decoration="fiiled">
-                                    Брошь цветок
-                                </span>
-                                <span class="item__price" data-status="start">
-                                    <i class="fa-solid fa-caret-right"></i> 500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__date-time">
-                                    Старт 10.03.2020 в 17:30
-                                </div>
-                                <div class="item__user">
-                                    <img src="assets/images/users/user2.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        MANYAKHANDMADA
-                                        <img src="assets/images/main/pro.svg" alt="" class="item__user-status">
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="2" data-item-type="action"
-                        data-type-action="active">
-                        <a class="item__img-wrapper" href="item.html">
-                            <img src="assets/images/items/item2.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__type">
-                                    Аукцион
-                                </span>
-                                <span class="item__price-status" data-status="upper">
-                                    Текущая ставка
-                                </span>
-                                <span class="item__name" date-decoration="fiiled">
-                                    Брошь цветок
-                                </span>
-                                <span class="item__price" data-status="upper">
-                                    <i class="fa-solid fa-sort-up"></i>
-                                    <i class="fa-solid fa-caret-right"></i> 500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__date-time">
-                                    Закрытие 20.03.2020 в 17:30
-                                </div>
-                                <div class="item__user">
-                                    <img src="assets/images/users/user3.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        JDJEWELRY
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="3" data-item-type="action"
-                        data-type-action="active">
-                        <a class="item__img-wrapper" href="">
-                            <img src="assets/images/items/item3.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__type">
-                                    Аукцион
-                                </span>
-                                <span class="item__price-status" data-status="start">
-                                    Текущая ставка
-                                </span>
-                                <span class="item__name" date-decoration="fiiled">
-                                    Подушка звезда
-                                </span>
-                                <span class="item__price" data-status="upper">
-                                    <i class="fa-solid fa-sort-up"></i>
-                                    <i class="fa-solid fa-caret-right"></i> 500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__date-time">
-                                    Закрытие 20.03.2020 в 17:30
-                                </div>
-                                <div class="item__user">
-                                    <img src="assets/images/users/user4.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        ELENA
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="4" data-item-type="action"
-                        data-type-action="active">
-                        <a class="item__img-wrapper" href="">
-                            <img src="assets/images/items/item4.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__type">
-                                    Аукцион
-                                </span>
-                                <span class="item__price-status" data-status="start">
-                                    Текущая ставка
-                                </span>
-                                <span class="item__name" date-decoration="fiiled">
-                                    Брошь цветок
-                                </span>
-                                <span class="item__price" data-status="upper">
-                                    <i class="fa-solid fa-sort-up"></i>
-                                    <i class="fa-solid fa-caret-right"></i> 500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__date-time">
-                                    Закрытие 20.03.2020 в 17:30
-                                </div>
-                                <div class="item__user">
-                                    <img src="assets/images/users/user5.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        JDJEWELRY
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="5" data-item-type="action"
-                        data-type-action="active">
-                        <a class="item__img-wrapper" href="">
-                            <img src="assets/images/items/item5.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__type">
-                                    Аукцион
-                                </span>
-                                <span class="item__price-status" data-status="start">
-                                    Текущая ставка
-                                </span>
-                                <span class="item__name" date-decoration="fiiled">
-                                    Брошь цветок
-                                </span>
-                                <span class="item__price" data-status="upper">
-                                    <i class="fa-solid fa-sort-up"></i>
-                                    <i class="fa-solid fa-caret-right"></i> 500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__date-time">
-                                    Закрытие 20.03.2020 в 17:30
-                                </div>
-                                <div class="item__user">
-                                    <img src="assets/images/users/user6.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        JDJEWELRY
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="6" data-item-type="action"
-                        data-type-action="active">
-                        <a class="item__img-wrapper" href="">
-                            <img src="assets/images/items/item6.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__type">
-                                    Аукцион
-                                </span>
-                                <span class="item__price-status" data-status="start">
-                                    Текущая ставка
-                                </span>
-                                <span class="item__name" date-decoration="">
-                                    Ключница
-                                </span>
-                                <span class="item__price" data-status="upper">
-                                    <i class="fa-solid fa-sort-up"></i>
-                                    <i class="fa-solid fa-caret-right"></i> 500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__date-time">
-                                    Закрытие 20.03.2020 в 17:30
-                                </div>
-                                <div class="item__user">
-                                    <img src="assets/images/users/user7.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        SHUNTR
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item=" 1" data-item-type="action"
-                        data-type-action="inactive">
-                        <a class="item__img-wrapper" href="item.html">
-                            <img src="assets/images/items/item1.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__type">
-                                    Аукцион
-                                </span>
-                                <span class="item__price-status" data-status="start">
-                                    Начальная ставка
-                                </span>
-                                <span class="item__name" date-decoration="fiiled">
-                                    Брошь цветок
-                                </span>
-                                <span class="item__price" data-status="start">
-                                    <i class="fa-solid fa-caret-right"></i> 500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__date-time">
-                                    Старт 10.03.2020 в 17:30
-                                </div>
-                                <div class="item__user">
-                                    <img src="assets/images/users/user2.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        MANYAKHANDMADA
-                                        <img src="assets/images/main/pro.svg" alt="" class="item__user-status">
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="2" data-item-type="action"
-                        data-type-action="active">
-                        <a class="item__img-wrapper" href="">
-                            <img src="assets/images/items/item2.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__type">
-                                    Аукцион
-                                </span>
-                                <span class="item__price-status" data-status="start">
-                                    Текущая ставка
-                                </span>
-                                <span class="item__name" date-decoration="fiiled">
-                                    Брошь цветок
-                                </span>
-                                <span class="item__price" data-status="upper">
-                                    <i class="fa-solid fa-sort-up"></i>
-                                    <i class="fa-solid fa-caret-right"></i> 500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__date-time">
-                                    Закрытие 20.03.2020 в 17:30
-                                </div>
-                                <div class="item__user">
-                                    <img src="assets/images/users/user3.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        JDJEWELRY
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="3" data-item-type="action"
-                        data-type-action="active">
-                        <a class="item__img-wrapper" href="">
-                            <img src="assets/images/items/item3.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__type">
-                                    Аукцион
-                                </span>
-                                <span class="item__price-status" data-status="start">
-                                    Текущая ставка
-                                </span>
-                                <span class="item__name" date-decoration="fiiled">
-                                    Подушка звезда
-                                </span>
-                                <span class="item__price" data-status="upper">
-                                    <i class="fa-solid fa-sort-up"></i>
-                                    <i class="fa-solid fa-caret-right"></i> 500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__date-time">
-                                    Закрытие 20.03.2020 в 17:30
-                                </div>
-                                <div class="item__user">
-                                    <img src="assets/images/users/user4.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        ELENA
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="4" data-item-type="action"
-                        data-type-action="active">
-                        <a class="item__img-wrapper" href="">
-                            <img src="assets/images/items/item4.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__type">
-                                    Аукцион
-                                </span>
-                                <span class="item__price-status" data-status="start">
-                                    Текущая ставка
-                                </span>
-                                <span class="item__name" date-decoration="fiiled">
-                                    Брошь цветок
-                                </span>
-                                <span class="item__price" data-status="upper">
-                                    <i class="fa-solid fa-sort-up"></i>
-                                    <i class="fa-solid fa-caret-right"></i> 500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__date-time">
-                                    Закрытие 20.03.2020 в 17:30
-                                </div>
-                                <div class="item__user">
-                                    <img src="assets/images/users/user5.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        JDJEWELRY
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="5" data-item-type="action"
-                        data-type-action="active">
-                        <a class="item__img-wrapper" href="">
-                            <img src="assets/images/items/item5.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__type">
-                                    Аукцион
-                                </span>
-                                <span class="item__price-status" data-status="start">
-                                    Текущая ставка
-                                </span>
-                                <span class="item__name" date-decoration="fiiled">
-                                    Брошь цветок
-                                </span>
-                                <span class="item__price" data-status="upper">
-                                    <i class="fa-solid fa-sort-up"></i>
-                                    <i class="fa-solid fa-caret-right"></i> 500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__date-time">
-                                    Закрытие 20.03.2020 в 17:30
-                                </div>
-                                <div class="item__user">
-                                    <img src="assets/images/users/user6.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        JDJEWELRY
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="6" data-item-type="action"
-                        data-type-action="active">
-                        <a class="item__img-wrapper" href="">
-                            <img src="assets/images/items/item6.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__type">
-                                    Аукцион
-                                </span>
-                                <span class="item__price-status" data-status="start">
-                                    Текущая ставка
-                                </span>
-                                <span class="item__name" date-decoration="">
-                                    Ключница
-                                </span>
-                                <span class="item__price" data-status="upper">
-                                    <i class="fa-solid fa-sort-up"></i>
-                                    <i class="fa-solid fa-caret-right"></i> 500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__date-time">
-                                    Закрытие 20.03.2020 в 17:30
-                                </div>
-                                <div class="item__user">
-                                    <img src="assets/images/users/user7.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        SHUNTR
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper__btns-wrapper" data-type-centered="img">
-                    <div class="swiper__button swiper__button-prev rounded-btn rounded-btn_white">
-                        <i class="fa-solid fa-caret-left"></i>
-                    </div>
-                    <div class="swiper__button swiper__button-next rounded-btn rounded-btn_white">
-                        <i class="fa-solid fa-caret-right"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="actions__body">
-                <div class="item" data-favorite="false" data-id-item=" 1" data-item-type="action"
-                    data-type-action="inactive">
-                    <a class="item__img-wrapper" href="">
-                        <img src="assets/images/items/item1.png" alt="" class="item__img">
-                    </a>
-                    <button class="favorite-btn" type="button">
-                    </button>
-                    <div class="item__body">
-                        <div class="item__element">
-                            <span class="item__type">
-                                Аукцион
-                            </span>
-                            <span class="item__price-status" data-status="start">
-                                Начальная ставка
-                            </span>
-                            <span class="item__name" date-decoration="fiiled">
-                                Брошь цветок
-                            </span>
-                            <span class="item__price" data-status="start">
-                                <i class="fa-solid fa-caret-right"></i> 500р
-                            </span>
-                        </div>
-                        <div class="item__element">
-                            <div class="item__date-time">
-                                Старт 10.03.2020 в 17:30
-                            </div>
-                            <div class="item__user" data-id-user="1">
-                                <img src="assets/images/users/user2.png" alt="" class="item__avatar">
-                                <a class="item__user-name" href="">
-                                    MANYAKHANDMADA
-                                    <img src="assets/images/main/pro.svg" alt="" class="item__user-status">
-                                </a>
-                                <span class="item__likes">
-                                    <i class="fa-solid fa-thumbs-up"></i>39
-                                </span>
-                                <span class="item__views">
-                                    <i class="fa-solid fa-eye"></i> 1562
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item" data-favorite="false" data-id-item="2" data-item-type="action" data-type-action="active">
-                    <a class="item__img-wrapper" href="">
-                        <img src="assets/images/items/item2.png" alt="" class="item__img">
-                    </a>
-                    <button class="favorite-btn" type="button">
-                    </button>
-                    <div class="item__body">
-                        <div class="item__element">
-                            <span class="item__type">
-                                Аукцион
-                            </span>
-                            <span class="item__price-status" data-status="upper">
-                                Текущая ставка
-                            </span>
-                            <span class="item__name" date-decoration="fiiled">
-                                Брошь цветок
-                            </span>
-                            <span class="item__price" data-status="upper">
-                                <i class="fa-solid fa-sort-up"></i>
-                                <i class="fa-solid fa-caret-right"></i> 500р
-                            </span>
-                        </div>
-                        <div class="item__element">
-                            <div class="item__date-time">
-                                Закрытие 20.03.2020 в 17:30
-                            </div>
-                            <div class="item__user">
-                                <img src="assets/images/users/user3.png" alt="" class="item__avatar">
-                                <a class="item__user-name" href="">
-                                    JDJEWELRY
-                                </a>
-                                <span class="item__likes">
-                                    <i class="fa-solid fa-thumbs-up"></i>39
-                                </span>
-                                <span class="item__views">
-                                    <i class="fa-solid fa-eye"></i> 1562
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item" data-favorite="false" data-id-item="3" data-item-type="action" data-type-action="active">
-                    <a class="item__img-wrapper" href="">
-                        <img src="assets/images/items/item3.png" alt="" class="item__img">
-                    </a>
-                    <button class="favorite-btn" type="button">
-                    </button>
-                    <div class="item__body">
-                        <div class="item__element">
-                            <span class="item__type">
-                                Аукцион
-                            </span>
-                            <span class="item__price-status" data-status="start">
-                                Текущая ставка
-                            </span>
-                            <span class="item__name" date-decoration="fiiled">
-                                Подушка звезда
-                            </span>
-                            <span class="item__price" data-status="upper">
-                                <i class="fa-solid fa-sort-up"></i>
-                                <i class="fa-solid fa-caret-right"></i> 500р
-                            </span>
-                        </div>
-                        <div class="item__element">
-                            <div class="item__date-time">
-                                Закрытие 20.03.2020 в 17:30
-                            </div>
-                            <div class="item__user">
-                                <img src="assets/images/users/user4.png" alt="" class="item__avatar">
-                                <a class="item__user-name" href="">
-                                    ELENA
-                                </a>
-                                <span class="item__likes">
-                                    <i class="fa-solid fa-thumbs-up"></i>39
-                                </span>
-                                <span class="item__views">
-                                    <i class="fa-solid fa-eye"></i> 1562
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="actions__btn button button_green"> Все аукционы</a>
-        </section>
-        <section class="findpresent">
-            <div class="findpresent__body">
-                <div class="findpresent__element">
-                    <div class="findpresent__hgroup hgroup">
-                        <h1 class="findpresent__title hgroup__title">
-                            Поиск подарка
-                            <img src="assets/images/main/present.svg" alt="" class="hgroup__img">
-                        </h1>
-                        <p class="findpresent__subtitle hgroup__subtitle">  
-                            Нужен уникальный подарок? Найди его прямо сейчас!
-                        </p>
-                        <p class="findpresent__subtitle hgroup__subtitle">
-                            Пуговки - это отличное место для поиска уникального подарка. Удивите и порадуйте родных, близких и друзей изделиями ручной работы.м
-                        </p>
-                    </div>
-                     <div class="findpresent__filters">
-                        <ul class="findpresent__list">
-                            <li class="findpresent__item" data-select="true">
-                                <div class="select">
-                                    <button class="findpresent__btn select-opener" type="button">
-                                        <i class="fa-solid fa-grip"></i> 
-                                        <span class="findpresent__text select__text">
-                                            Область творчества
-                                        </span>
-                                        <i class="fa-solid fa-caret-down"></i>
-                                    </button>
-                                <div class="findpresent__select-wrapper select__body">
-                                    <ul class="select__list">
-                                        <li class="select__item">
-                                           <button class="select__btn" type="button">
-                                                Чтение
-                                           </button>
-                                        </li>
-                                        <li class="select__item">
-                                            <button class="select__btn" type="button">
-                                                Одежда и обувь
-                                           </button>
-                                        </li>
-                                        <li class="select__item">
-                                            <button class="select__btn" type="button">
-                                                Скрупбукинг
-                                           </button>
-                                        </li>
-                                        <li class="select__item">
-                                            <button class="select__btn" type="button">
-                                                Куклы
-                                           </button>
-                                        </li>
-                                        <li class="select__item">
-                                            <button class="select__btn" type="button">
-                                                Рисование
-                                           </button>
-                                        </li>
-                                    </ul>
-                                </div>
-                                </div>
-                            
-                            </li>
-                            <li class="findpresent__item" data-select="true">
-                                <div class="select">
-                                    <button class="findpresent__btn select-opener" type="button">
-                                    <i class="fa-solid fa-user"></i> 
-                                    <span class="findpresent__text select__text">
-                                        Для кого
-                                    </span>
-                                    <i class="fa-solid fa-caret-down"></i>
-                                </button>
-                                <div class="findpresent__select-wrapper select__body">
-                                    <ul class="select__list">
-                                        <li class="select__item">
-                                           <button class="select__btn" type="button">
-                                                Для ребенка
-                                           </button>
-                                        </li>
-                                        <li class="select__item">
-                                            <button class="select__btn" type="button">
-                                                Для подростка
-                                           </button>
-                                        </li>
-                                        <li class="select__item">
-                                            <button class="select__btn" type="button">
-                                                Для Взрослого
-                                           </button>
-                                        </li>
-                                    </ul>
-                                </div>
-                                </div>
-                                
-                            </li>
-                            <li class="findpresent__item" data-select="true">
-                                <div class="select">
-                                 <button class="findpresent__btn select-opener" type="button">
-                                        <img src="assets/images/main/rounded-rainbow.svg" alt="" class="findprsent__icon">
-                                        <span class="findpresent__text select__text">
-                                            Цвет
-                                        </span>
-                                        <i class="fa-solid fa-caret-down"></i>
-                                </button>
-        
-                                <div class="findpresent__select-wrapper select__body">
-                                    <ul class="select__list">
-                                        <li class="select__item">
-                                            <button class="select__btn" type="button">
-                                                 Любой
-                                            </button>
-                                         </li>
-                                        <li class="select__item">
-                                           <button class="select__btn" type="button">
-                                                Красный 
-                                           </button>
-                                        </li>
-                                        <li class="select__item">
-                                            <button class="select__btn" type="button">
-                                                Синий
-                                           </button>
-                                        </li>
-                                        <li class="select__item">
-                                            <button class="select__btn" type="button">
-                                                Зеленый
-                                           </button>
-                                        </li>
-                                    </ul>
-                                </div>
-                                </div>
-                                
-                            </li>
-                            <li class="findpresent__item" data-select="true">
-                                <div class="select">
-                                     <button class="findpresent__btn select-opener" type="button">
-                                    <i class="fa-solid fa-grip"></i>
-                                    <span class="findpresent__text select__text">
-                                        Наличие
-                                    </span>
-                                    <i class="fa-solid fa-caret-down"></i>
-                                </button>
-                                <div class="findpresent__select-wrapper select__body">
-                                    <ul class="select__list">
-                                        <li class="select__item">
-                                           <button class="select__btn" type="button">
-                                                В наличии
-                                           </button>
-                                        </li>
-                                        <li class="select__item">
-                                            <button class="select__btn" type="button">
-                                                Под заказ
-                                           </button>
-                                        </li>
-                                    </ul>
-                                </div>
-                                </div>
-                               
-                            </li>
-                            <li class="findpresent__item" data-select="true">
-                                <div class="select">
-                                    <button class="findpresent__btn select-opener" type="button">
-                                    <i class="fa-solid fa-ruble-sign"></i>
-                                    <span class="findpresent__text select__text">
-                                        Диапазон цен
-                                    </span>
-                                    <i class="fa-solid fa-caret-down"></i>
-                                </button>
-                                <div class="findpresent__select-wrapper select__body">
-                                    <ul class="select__list">
-                                        <li class="select__item">
-                                           <button class="select__btn" type="button">
-                                                до 500р.
-                                           </button>
-                                        </li>
-                                        <li class="select__item">
-                                            <button class="select__btn" type="button">
-                                                до 2000р.
-                                           </button>
-                                        </li>
-                                        <li class="select__item">
-                                            <button class="select__btn" type="button">
-                                                Более 2000р.
-                                           </button>
-                                        </li>
-                                    </ul>
-                                </div>
-                                </div>
-        
-                            </li>
-                            <li class="findpresent__item">
-                                <button class="findpresent__btn button button_orange type="button">
-                                    Подобрать идеи
-                                </button>
-                            </li>
-                        </ul>
-                     </div>
-                </div>
-                <img src="assets/images/main/present-rectangle.png" alt="" class="findpresent__img">
-            </div>
-        </section>    <div class="underline underline_type3"></div>
-        <section class="special">
-            <div class="special__hgroup hgroup">
-                <h1 class="special__title hgroup__title">
-                    Специально для вас
-                    <img src="assets/images/main/heart-icon.svg" alt="" class="hgroup__img">
-                </h1>
-                <p class="special__subtitle hgroup__subtitle">
-                    Находи каждый день сотни удивительных изделия, по своему вкусу
-                </p>
-            </div>
-            <div class="special__filters">
-                <button class="special__btn button button_gray">
-                    Уютное
-                </button>
-                <button class="special__btn button button_gray">
-                    Полезное
-                </button>
-                <button class="special__btn button button_gray">
-                    Самые дешевые изделия
-                </button>
-                <button class="special__btn button button_gray">
-                    Приятные мелочи
-                </button>
-                <button class="special__btn button button_gray">
-                    Что-то для ребенка
-                </button>
-            </div>
-            <div class="special__body">
-                <div class="swiper-slide item" data-favorite="false" data-id-item="1" data-item-type="action"
-                data-type-action="inactive">
-                <a class="item__img-wrapper" href="item.html">
-                    <img src="assets/images/items/item1.png" alt="" class="item__img">
-                </a>
-                <button class="favorite-btn" type="button">
-                </button>
-                <div class="item__body">
-                    <div class="item__element">
-                        <span class="item__type">
-                            Аукцион
-                        </span>
-                        <span class="item__price-status" data-status="upper">
-                            Текущая ставка
-                        </span>
-                        <span class="item__name" date-decoration="fiiled">
-                            Брошь цветок
-                        </span>
-                        <span class="item__price" data-status="upper">
-                            <i class="fa-solid fa-sort-up"></i>
-                            <i class="fa-solid fa-caret-right"></i> 500р
-                        </span>
-                    </div>
-                    <div class="item__element">
-                        <div class="item__date-time">
-                            Закрытие 20.03.2020 в 17:30
-                        </div>
-                        <div class="item__user">
-                            <img src="assets/images/users/user3.png" alt="" class="item__avatar">
-                            <a class="item__user-name" href="">
-                                JDJEWELRY
-                            </a>
-                            <span class="item__likes">
-                                <i class="fa-solid fa-thumbs-up"></i>39
-                            </span>
-                            <span class="item__views">
-                                <i class="fa-solid fa-eye"></i> 1562
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                <div class="swiper-slide item" data-favorite="false" data-id-item="2" data-item-type="action"
-                    data-type-action="active">
-                    <a class="item__img-wrapper" href="item.html">
-                        <img src="assets/images/items/item2.png" alt="" class="item__img">
-                    </a>
-                    <button class="favorite-btn" type="button">
-                    </button>
-                    <div class="item__body">
-                        <div class="item__element">
-                            <span class="item__type">
-                                Аукцион
-                            </span>
-                            <span class="item__price-status" data-status="upper">
-                                Текущая ставка
-                            </span>
-                            <span class="item__name" date-decoration="fiiled">
-                                Брошь цветок
-                            </span>
-                            <span class="item__price" data-status="upper">
-                                <i class="fa-solid fa-sort-up"></i>
-                                <i class="fa-solid fa-caret-right"></i> 500р
-                            </span>
-                        </div>
-                        <div class="item__element">
-                            <div class="item__date-time">
-                                Закрытие 20.03.2020 в 17:30
-                            </div>
-                            <div class="item__user">
-                                <img src="assets/images/users/user3.png" alt="" class="item__avatar">
-                                <a class="item__user-name" href="">
-                                    JDJEWELRY
-                                </a>
-                                <span class="item__likes">
-                                    <i class="fa-solid fa-thumbs-up"></i>39
-                                </span>
-                                <span class="item__views">
-                                    <i class="fa-solid fa-eye"></i> 1562
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide item" data-favorite="false" data-id-item="3" data-item-type="action"
-                    data-type-action="active">
-                    <a class="item__img-wrapper" href="">
-                        <img src="assets/images/items/item3.png" alt="" class="item__img">
-                    </a>
-                    <button class="favorite-btn" type="button">
-                    </button>
-                    <div class="item__body">
-                        <div class="item__element">
-                            <span class="item__type">
-                                Аукцион
-                            </span>
-                            <span class="item__price-status" data-status="start">
-                                Текущая ставка
-                            </span>
-                            <span class="item__name" date-decoration="fiiled">
-                                Подушка звезда
-                            </span>
-                            <span class="item__price" data-status="upper">
-                                <i class="fa-solid fa-sort-up"></i>
-                                <i class="fa-solid fa-caret-right"></i> 500р
-                            </span>
-                        </div>
-                        <div class="item__element">
-                            <div class="item__date-time">
-                                Закрытие 20.03.2020 в 17:30
-                            </div>
-                            <div class="item__user">
-                                <img src="assets/images/users/user4.png" alt="" class="item__avatar">
-                                <a class="item__user-name" href="">
-                                    ELENA
-                                </a>
-                                <span class="item__likes">
-                                    <i class="fa-solid fa-thumbs-up"></i>39
-                                </span>
-                                <span class="item__views">
-                                    <i class="fa-solid fa-eye"></i> 1562
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide item" data-favorite="false" data-id-item="4" data-item-type="action"
-                    data-type-action="active">
-                    <a class="item__img-wrapper" href="">
-                        <img src="assets/images/items/item4.png" alt="" class="item__img">
-                    </a>
-                    <button class="favorite-btn" type="button">
-                    </button>
-                    <div class="item__body">
-                        <div class="item__element">
-                            <span class="item__type">
-                                Аукцион
-                            </span>
-                            <span class="item__price-status" data-status="start">
-                                Текущая ставка
-                            </span>
-                            <span class="item__name" date-decoration="fiiled">
-                                Брошь цветок
-                            </span>
-                            <span class="item__price" data-status="upper">
-                                <i class="fa-solid fa-sort-up"></i>
-                                <i class="fa-solid fa-caret-right"></i> 500р
-                            </span>
-                        </div>
-                        <div class="item__element">
-                            <div class="item__date-time">
-                                Закрытие 20.03.2020 в 17:30
-                            </div>
-                            <div class="item__user">
-                                <img src="assets/images/users/user5.png" alt="" class="item__avatar">
-                                <a class="item__user-name" href="">
-                                    JDJEWELRY
-                                </a>
-                                <span class="item__likes">
-                                    <i class="fa-solid fa-thumbs-up"></i>39
-                                </span>
-                                <span class="item__views">
-                                    <i class="fa-solid fa-eye"></i> 1562
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide item" data-favorite="false" data-id-item="5" data-item-type="action"
-                    data-type-action="active">
-                    <a class="item__img-wrapper" href="">
-                        <img src="assets/images/items/item5.png" alt="" class="item__img">
-                    </a>
-                    <button class="favorite-btn" type="button">
-                    </button>
-                    <div class="item__body">
-                        <div class="item__element">
-                            <span class="item__type">
-                                Аукцион
-                            </span>
-                            <span class="item__price-status" data-status="start">
-                                Текущая ставка
-                            </span>
-                            <span class="item__name" date-decoration="fiiled">
-                                Брошь цветок
-                            </span>
-                            <span class="item__price" data-status="upper">
-                                <i class="fa-solid fa-sort-up"></i>
-                                <i class="fa-solid fa-caret-right"></i> 500р
-                            </span>
-                        </div>
-                        <div class="item__element">
-                            <div class="item__date-time">
-                                Закрытие 20.03.2020 в 17:30
-                            </div>
-                            <div class="item__user">
-                                <img src="assets/images/users/user6.png" alt="" class="item__avatar">
-                                <a class="item__user-name" href="">
-                                    JDJEWELRY
-                                </a>
-                                <span class="item__likes">
-                                    <i class="fa-solid fa-thumbs-up"></i>39
-                                </span>
-                                <span class="item__views">
-                                    <i class="fa-solid fa-eye"></i> 1562
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide item" data-favorite="false" data-id-item=" 8" data-item-type="onsell">
-                    <a class="item__img-wrapper" href="">
-                        <img src="assets/images/items/item8.png" alt="" class="item__img">
-                        <span class="discount">-20%</span>
-                    </a>
-                    <button class="favorite-btn" type="button">
-                    </button>
-                    <div class="item__body">
-                        <div class="item__element">
-                            <span class="item__name" date-decoration="fiiled">
-                                Брошь цветок
-                            </span>
-                            <span class="item__price">
-                                500р
-                            </span>
-                        </div>
-                        <div class="item__element">
-                            <div class="item__user">
-                                <img src="assets/images/users/user2.png" alt="" class="item__avatar">
-                                <a class="item__user-name" href="">
-                                    MANYAKHANDMADA
-                                    <img src="assets/images/main/pro.svg" alt="" class="item__user-status">
-                                </a>
-                                <span class="item__likes">
-                                    <i class="fa-solid fa-thumbs-up"></i>39
-                                </span>
-                                <span class="item__views">
-                                    <i class="fa-solid fa-eye"></i> 1562
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide item" data-favorite="false" data-id-item="6" data-item-type="action"
-                    data-type-action="active">
-                    <a class="item__img-wrapper" href="">
-                        <img src="assets/images/items/item6.png" alt="" class="item__img">
-                    </a>
-                    <button class="favorite-btn" type="button">
-                    </button>
-                    <div class="item__body">
-                        <div class="item__element">
-                            <span class="item__type">
-                                Аукцион
-                            </span>
-                            <span class="item__price-status" data-status="start">
-                                Текущая ставка
-                            </span>
-                            <span class="item__name" date-decoration="">
-                                Ключница
-                            </span>
-                            <span class="item__price" data-status="upper">
-                                <i class="fa-solid fa-sort-up"></i>
-                                <i class="fa-solid fa-caret-right"></i> 500р
-                            </span>
-                        </div>
-                        <div class="item__element">
-                            <div class="item__date-time">
-                                Закрытие 20.03.2020 в 17:30
-                            </div>
-                            <div class="item__user">
-                                <img src="assets/images/users/user7.png" alt="" class="item__avatar">
-                                <a class="item__user-name" href="">
-                                    SHUNTR
-                                </a>
-                                <span class="item__likes">
-                                    <i class="fa-solid fa-thumbs-up"></i>39
-                                </span>
-                                <span class="item__views">
-                                    <i class="fa-solid fa-eye"></i> 1562
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide item" data-favorite="false" data-id-item="10" data-item-type="action"
-                    data-type-action="active">
-                    <a class="item__img-wrapper" href="">
-                        <img src="assets/images/items/item10.png" alt="" class="item__img">
-                    </a>
-                    <button class="favorite-btn" type="button">
-                    </button>
-                    <div class="item__body">
-                        <div class="item__element">
-                            <span class="item__type">
-                                Аукцион
-                            </span>
-                            <span class="item__price-status" data-status="start">
-                                Текущая ставка
-                            </span>
-                            <span class="item__name" date-decoration="fiiled">
-                                Брошь цветок
-                            </span>
-                            <span class="item__price" data-status="upper">
-                                <i class="fa-solid fa-sort-up"></i>
-                                <i class="fa-solid fa-caret-right"></i> 500р
-                            </span>
-                        </div>
-                        <div class="item__element">
-                            <div class="item__date-time">
-                                Закрытие 20.03.2020 в 17:30
-                            </div>
-                            <div class="item__user">
-                                <img src="assets/images/users/user3.png" alt="" class="item__avatar">
-                                <a class="item__user-name" href="">
-                                    JDJEWELRY
-                                </a>
-                                <span class="item__likes">
-                                    <i class="fa-solid fa-thumbs-up"></i>39
-                                </span>
-                                <span class="item__views">
-                                    <i class="fa-solid fa-eye"></i> 1562
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide item" data-favorite="false" data-id-item="11" data-item-type="action"
-                    data-type-action="active">
-                    <a class="item__img-wrapper" href="">
-                        <img src="assets/images/items/item11.png" alt="" class="item__img">
-                    </a>
-                    <button class="favorite-btn" type="button">
-                    </button>
-                    <div class="item__body">
-                        <div class="item__element">
-                            <span class="item__type">
-                                Аукцион
-                            </span>
-                            <span class="item__price-status" data-status="start">
-                                Текущая ставка
-                            </span>
-                            <span class="item__name" date-decoration="fiiled">
-                                Подушка звезда
-                            </span>
-                            <span class="item__price" data-status="upper">
-                                <i class="fa-solid fa-sort-up"></i>
-                                <i class="fa-solid fa-caret-right"></i> 500р
-                            </span>
-                        </div>
-                        <div class="item__element">
-                            <div class="item__date-time">
-                                Закрытие 20.03.2020 в 17:30
-                            </div>
-                            <div class="item__user">
-                                <img src="assets/images/users/user4.png" alt="" class="item__avatar">
-                                <a class="item__user-name" href="">
-                                    ELENA
-                                </a>
-                                <span class="item__likes">
-                                    <i class="fa-solid fa-thumbs-up"></i>39
-                                </span>
-                                <span class="item__views">
-                                    <i class="fa-solid fa-eye"></i> 1562
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide item" data-favorite="false" data-id-item="12" data-item-type="action"
-                    data-type-action="active">
-                    <a class="item__img-wrapper" href="">
-                        <img src="assets/images/items/item12.png" alt="" class="item__img">
-                    </a>
-                    <button class="favorite-btn" type="button">
-                    </button>
-                    <div class="item__body">
-                        <div class="item__element">
-                            <span class="item__type">
-                                Аукцион
-                            </span>
-                            <span class="item__price-status" data-status="start">
-                                Текущая ставка
-                            </span>
-                            <span class="item__name" date-decoration="fiiled">
-                                Брошь цветок
-                            </span>
-                            <span class="item__price" data-status="upper">
-                                <i class="fa-solid fa-sort-up"></i>
-                                <i class="fa-solid fa-caret-right"></i> 500р
-                            </span>
-                        </div>
-                        <div class="item__element">
-                            <div class="item__date-time">
-                                Закрытие 20.03.2020 в 17:30
-                            </div>
-                            <div class="item__user">
-                                <img src="assets/images/users/user5.png" alt="" class="item__avatar">
-                                <a class="item__user-name" href="">
-                                    JDJEWELRY
-                                </a>
-                                <span class="item__likes">
-                                    <i class="fa-solid fa-thumbs-up"></i>39
-                                </span>
-                                <span class="item__views">
-                                    <i class="fa-solid fa-eye"></i> 1562
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="special__btn button button_black">
-                Показать еще
-            </button>
-        </section>
-        <div class="underline underline_type1"></div>
-        <section class="new-items">
-            <div class="new-items__hgroup hgroup">
-                <h1 class="new-items__title hgroup__title">
-                    Что-то новенькое
-                    <img src="assets/images/main/hade-peace.svg" alt="" class="hgroup__img">
-                </h1>
-                <a href="" class="button button_green">Больше новых изделий</a>
-            </div>
-            <div class="swiper items-swiper">
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="1" data-item-type="onsell">
-                        <a class="item__img-wrapper" href="item.html">
-                            <img src="assets/images/items/item1.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__name" date-decoration="fiiled">
-                                    Брошь цветок
-                                </span>
-                                <span class="item__price">
-                                    500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__user">
-                                    <img src="assets/images/users/user2.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        MANYAKHANDMADA
-                                        <img src="assets/images/main/pro.svg" alt="" class="item__user-status">
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="2" data-item-type="onsell">
-                        <a class="item__img-wrapper" href="">
-                            <img src="assets/images/items/item2.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__name" date-decoration="fiiled">
-                                    Куколка бараш) из мультфима смешарики
-                                </span>
-                                <span class="item__price">
-                                    500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__user">
-                                    <img src="assets/images/users/user2.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        MANYAKHANDMADA
-                                        <img src="assets/images/main/pro.svg" alt="" class="item__user-status">
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="3" data-item-type="onsell">
-                        <a class="item__img-wrapper" href="">
-                            <img src="assets/images/items/item3.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__name" date-decoration="fiiled">
-                                    Брошь цветок
-                                </span>
-                                <span class="item__price">
-                                    500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__user">
-                                    <img src="assets/images/users/user2.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        MANYAKHANDMADA
-                                        <img src="assets/images/main/pro.svg" alt="" class="item__user-status">
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="4" data-item-type="onsell">
-                        <a class="item__img-wrapper" href="">
-                            <img src="assets/images/items/item4.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__name" date-decoration="fiiled">
-                                    Брошь цветок
-                                </span>
-                                <span class="item__price">
-                                    500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__user">
-                                    <img src="assets/images/users/user2.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        MANYAKHANDMADA
-                                        <img src="assets/images/main/pro.svg" alt="" class="item__user-status">
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="5" data-item-type="onsell">
-                        <a class="item__img-wrapper" href="">
-                            <img src="assets/images/items/item5.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__name" date-decoration="fiiled">
-                                    Брошь цветок
-                                </span>
-                                <span class="item__price">
-                                    500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__user">
-                                    <img src="assets/images/users/user2.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        MANYAKHANDMADA
-                                        <img src="assets/images/main/pro.svg" alt="" class="item__user-status">
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide item" data-favorite="false" data-id-item="6" data-item-type="onsell">
-                        <a class="item__img-wrapper" href="">
-                            <img src="assets/images/items/item6.png" alt="" class="item__img">
-                        </a>
-                        <button class="favorite-btn" type="button">
-                        </button>
-                        <div class="item__body">
-                            <div class="item__element">
-                                <span class="item__name" date-decoration="fiiled">
-                                    Брошь цветок
-                                </span>
-                                <span class="item__price">
-                                    500р
-                                </span>
-                            </div>
-                            <div class="item__element">
-                                <div class="item__user">
-                                    <img src="assets/images/users/user2.png" alt="" class="item__avatar">
-                                    <a class="item__user-name" href="">
-                                        MANYAKHANDMADA
-                                        <img src="assets/images/main/pro.svg" alt="" class="item__user-status">
-                                    </a>
-                                    <span class="item__likes">
-                                        <i class="fa-solid fa-thumbs-up"></i>39
-                                    </span>
-                                    <span class="item__views">
-                                        <i class="fa-solid fa-eye"></i> 1562
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <div class="switcher active">
+                            <button class="catalog__switcher switcher__btn active">
     
-                </div>
-                <div class="swiper__btns-wrapper" data-type-centered="block">
-                    <div class="swiper__button swiper__button-prev rounded-btn rounded-btn_white">
-                        <i class="fa-solid fa-caret-left"></i>
+                            </button>
+                            Доставка по РФ
+                        </div>
+                        <button class="catalog__btn moved-menu-opener" data-type-menu="AddBurse" data-moved-menu="true">
+                            Добавить заявку
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+    
+                        <div class="select" data-select="true">
+                            <button class="select-opener catalog__btn" type="button">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span class="select__text">
+                                    Вся россия
+                                </span>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </button>
+                            <div class="select__body">
+                                <ul class="select__list">
+                                    <li class="select__item">
+                                        <button class="select__btn" type="button">
+                                            Нижний Тагил
+                                        </button>
+                                    </li>
+                                    <li class="select__item">
+                                        <button class="select__btn" type="button">
+                                            Екатеринбург
+                                        </button>
+                                    </li>
+                                    <li class="select__item">
+                                        <button class="select__btn" type="button">
+                                            Москва
+                                        </button>
+                                    </li>
+                                    <li class="select__item">
+                                        <button class="select__btn" type="button">
+                                            Санкт-Петербург
+                                        </button>
+                                    </li>
+                                    <li class="select__item">
+                                        <button class="select__btn" type="button">
+                                            Челябинск
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+    
                     </div>
-                    <div class="swiper__button swiper__button-next rounded-btn rounded-btn_white">
-                        <i class="fa-solid fa-caret-right"></i>
-                    </div>
                 </div>
+                <div class="catalog__wrapper">
+                    <div class="filter moved-menu" data-type-menu="filter">
+                        <header class="moved-menu__header">
+                            <div class="moved-menu__element">
+                                <h2 class="moved-menu__title">
+                                    Фильтр
+                                </h2>
+                            </div>
+                            <button class="moved-menu__btn rounded-btn rounded-btn_white" data-action="close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </header>
+                        <div class="filter__main-body">
+                            <ul class="filter__list">
+                                <li class="filter__block">
+                                    <h3 class="filter__title">
+                                        <span class="filter__text">
+                                            Бюджет,руб
+                                        </span>
+                                    </h3>
+                                    <div class="filter__input-wrapper">
+                                        <input type="text" class="filter__input" readonly value="100">
+                                        <input type="text" class="filter__input" readonly value="19300">
+                                    </div>
+                                    <div class="filter__range-wrapper">
+                                        <div class="filter__range"></div>
+                                        <span class="filter__min-price">100</span>
+                                        <span class="filter__max-price">19300</span>
+                                    </div>
+                    
+                                </li>
+                                <li class="filter__block">
+                                    <h3 class="filter__title">
+                                        <span class="filter__text">
+                                            Категории
+                                        </span>
+                                        <span class="filter__count"></span>
+                                    </h3>
+                                    <div class="filter__body">
+                                        <ul class="filter__list filter__list_items">
+                                            <li class="filter__item">
+                                                <input type="checkbox" id="category1" name="categorys" class="filter__checkbox">
+                                                <label for="category1" data-filter-type="category" data-id-category="1"
+                                                    data-name-category="Варежки" class="filter__label">
+                                                    <div class="filter__custom-checkbox"><i class="fa-solid fa-check"></i></div>
+                                                    Варежки
+                                                </label>
+                                            </li>
+                                            <li class="filter__item">
+                                                <input type="checkbox" id="category2" name="category2" class="filter__checkbox">
+                                                <label for="category2" data-filter-type="category" data-id-category="2"
+                                                    class="filter__label" data-name-category="Шапки">
+                                                    <div class="filter__custom-checkbox"><i class="fa-solid fa-check"></i></div>
+                                                    Шапки
+                                                </label>
+                                            </li>
+                                            <li class="filter__item">
+                                                <input type="checkbox" id="category3" name="category3" class="filter__checkbox">
+                                                <label for="category3" data-filter-type="category" data-id-category="3"
+                                                    class="filter__label" data-name-category="Кошельки">
+                                                    <div class="filter__custom-checkbox"><i class="fa-solid fa-check"></i></div>
+                                                    Кошельки
+                                                </label>
+                                            </li>
+                                            <li class="filter__item">
+                                                <input type="checkbox" id="category4" name="category4" class="filter__checkbox">
+                                                <label for="category4" data-filter-type="category" data-id-category="4"
+                                                    class="filter__label" data-name-category="Галстуки">
+                                                    <div class="filter__custom-checkbox"><i class="fa-solid fa-check"></i></div>
+                                                    Галстуки
+                                                </label>
+                                            </li>
+                                            <li class="filter__item">
+                                                <input type="checkbox" id="category5" name="category5" class="filter__checkbox">
+                                                <label for="category5" data-filter-type="category" data-id-category="5"
+                                                    class="filter__label" data-name-category="Шарфы">
+                                                    <div class="filter__custom-checkbox"><i class="fa-solid fa-check"></i></div>
+                                                    Шарфы
+                                                </label>
+                                            </li>
+                                            <li class="filter__item">
+                                                <input type="checkbox" id="category6" name="category6" class="filter__checkbox">
+                                                <label for="category6" data-filter-type="category" data-id-category="6"
+                                                    class="filter__label" data-name-category="Часы">
+                                                    <div class="filter__custom-checkbox"><i class="fa-solid fa-check"></i></div>
+                                                    Часы
+                                                </label>
+                                            </li>
+                                            <li class="filter__item">
+                                                <input type="checkbox" id="category7" name="category7" class="filter__checkbox">
+                                                <label for="category7" data-filter-type="category" data-id-category="7"
+                                                    class="filter__label" data-name-category="Сумки">
+                                                    <div class="filter__custom-checkbox"><i class="fa-solid fa-check"></i></div>
+                                                    Сумки
+                                                </label>
+                                            </li>
+                                            <li class="filter__item">
+                                                <input type="checkbox" id="category8" name="category8" class="filter__checkbox">
+                                                <label for="category8" data-filter-type="category" data-id-category="8"
+                                                    class="filter__label" data-name-category="Шали">
+                                                    <div class="filter__custom-checkbox"><i class="fa-solid fa-check"></i></div>
+                                                    Шали
+                                                </label>
+                                            </li>
+                                            <li class="filter__item">
+                                                <input type="checkbox" id="category9" name="category9" class="filter__checkbox">
+                                                <label for="category9" data-filter-type="category" data-id-category="9"
+                                                    class="filter__label" data-name-category="Митенки">
+                                                    <div class="filter__custom-checkbox"><i class="fa-solid fa-check"></i></div>
+                                                    Митенки
+                                                </label>
+                                            </li>
+                                            <li class="filter__item">
+                                                <input type="checkbox" id="category10" name="category10" class="filter__checkbox">
+                                                <label for="category10" data-filter-type="category" data-id-category="10"
+                                                    class="filter__label" data-name-category="Гетры">
+                                                    <div class="filter__custom-checkbox"><i class="fa-solid fa-check"></i></div>
+                                                    Гетры
+                                                </label>
+                                            </li>
+                                            <li class="filter__item">
+                                                <input type="checkbox" id="category11" name="category11" class="filter__checkbox">
+                                                <label for="category11" data-filter-type="category" data-id-category="11"
+                                                    class="filter__label" data-name-category="Лосины">
+                                                    <div class="filter__custom-checkbox"><i class="fa-solid fa-check"></i></div>
+                                                    Лосины
+                                                </label>
+                                            </li>
+                                            <li class="filter__item">
+                                                <input type="checkbox" id="category12" name="category12" class="filter__checkbox">
+                                                <label for="category12" data-filter-type="category" data-id-category="12"
+                                                    class="filter__label" data-name-category="Толстовка">
+                                                    <div class="filter__custom-checkbox"><i class="fa-solid fa-check"></i></div>
+                                                    Толстовка
+                                                </label>
+                                            </li>
+                                            <li class="filter__item">
+                                                <input type="checkbox" id="category13" name="category13" class="filter__checkbox">
+                                                <label for="category13" data-filter-type="category" data-id-category="13"
+                                                    class="filter__label" data-name-category="Свитер">
+                                                    <div class="filter__custom-checkbox"><i class="fa-solid fa-check"></i></div>
+                                                    Свитер
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="filter__btns">
+                                <button class="filter__btn filter__btn_green" data-action="accept">Применить</button>
+                                <button class="filter__btn filter__btn_gray" data-action="reset">Сбросить все</button>
+                            </div>
+                        </div>
+                    </div>                <div class="catalog__item-wrapper">
+                        <article class="burse" data-id="1">
+                            <div class="burse__head">
+                                <a href="burse-page.html" class="burse__name">
+                                    Изготовить кошелек по референсным фотографиям
+                                </a>
+                                <span class="burse__price">
+                                    <b>Бюджет</b>
+                                    1600р.
+                                </span>
+                            </div>
+                            <div class="burse__body">
+                                <p class="burse__text">
+                                    Есть фотографии того что хотелось бы. Материал скорее всего кожа натуральная. Строчка
+                                    обязательно красная, так же очень нравится пуговки. Стоимость договорная
+                                </p>
+                                <img src="assets/images/items/item11.png" alt="" class="burse__img">
+                            </div>
+                            <div class="burse__footer">
+                                <div class="burse__author author">
+                                    <a href="" class="author__name">ELENA</a>
+                                    <span class="burse__time">
+                                        18.02.2020 в 14:32
+                                    </span>
+                                    <span class="burse__views">
+                                        <i class="fa-solid fa-eye"></i>
+                                        1542
+                                    </span>
+                                </div>
+                                <div class="burse__info">
+                                    <b>
+                                        Категория
+                                        <a href="" class="burse__category">Кошельки</a>
+                                    </b>
+                                    <span class="burse__answers">
+                                        Откликов мастеров
+                                        <b>12</b>
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="burse" data-id="2">
+                            <div class="burse__head">
+                                <a href="burse-page.html" class="burse__name">
+                                    Свитр на замке
+                                </a>
+                                <span class="burse__price">
+                                    <b>Бюджет</b>
+                                    1600р.
+                                </span>
+                            </div>
+                            <div class="burse__body">
+                                <p class="burse__text">
+                                    Нужна красивая зимняя шапочка оранжевого цвета, возможно с оттенками около оранжевого.
+                                    Есть пример, нужно один в один сделать как на фото, цвет ориентировочно такой же, но без
+                                    зеленого.
+                                </p>
+                                <img src="assets/images/items/item5.png" alt="" class="burse__img">
+                            </div>
+                            <div class="burse__footer">
+                                <div class="burse__author author">
+                                    <a href="" class="author__name">ELENA</a>
+                                    <span class="burse__time">
+                                        18.02.2020 в 14:32
+                                    </span>
+                                    <span class="burse__views">
+                                        <i class="fa-solid fa-eye"></i>
+                                        1542
+                                    </span>
+                                </div>
+                                <div class="burse__info">
+                                    <b>
+                                        Категория
+                                        <a href="" class="burse__category">Кошельки</a>
+                                    </b>
+                                    <span class="burse__answers">
+                                        Откликов мастеров
+                                        <b>12</b>
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="burse" data-id="3">
+                            <div class="burse__head">
+                                <a href="burse-page.html" class="burse__name">
+                                    Изготовить кошелек по референсным фотографиям
+                                </a>
+                                <span class="burse__price">
+                                    <b>Бюджет</b>
+                                    1200р.
+                                </span>
+                            </div>
+                            <div class="burse__body">
+                                <p class="burse__text">
+                                    Есть фотографии того что хотелось бы. Материал скорее всего кожа натуральная. Строчка
+                                    обязательно красная, так же очень нравится пуговки. Стоимость договорная
+                                </p>
+                            </div>
+                            <div class="burse__footer">
+                                <div class="burse__author author">
+                                    <a href="" class="author__name">ELENA</a>
+                                    <span class="burse__time">
+                                        18.02.2020 в 14:32
+                                    </span>
+                                    <span class="burse__views">
+                                        <i class="fa-solid fa-eye"></i>
+                                        1542
+                                    </span>
+                                </div>
+                                <div class="burse__info">
+                                    <b>
+                                        Категория
+                                        <a href="" class="burse__category">Кошельки</a>
+                                    </b>
+                                    <span class="burse__answers">
+                                        Откликов мастеров
+                                        <b>12</b>
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="burse" data-id="4">
+                            <div class="burse__head">
+                                <a href="burse-page.html" class="burse__name">
+                                    Изготовить кошелек по референсным фотографиям
+                                </a>
+                                <span class="burse__price">
+                                    <b>Бюджет</b>
+                                    1600р.
+                                </span>
+                            </div>
+                            <div class="burse__body">
+                                <p class="burse__text">
+                                    Есть фотографии того что хотелось бы. Материал скорее всего кожа натуральная. Строчка
+                                    обязательно красная, так же очень нравится пуговки. Стоимость договорная
+                                </p>
+                                <img src="assets/images/items/item7.png" alt="" class="burse__img">
+                            </div>
+                            <div class="burse__footer">
+                                <div class="burse__author author">
+                                    <a href="" class="author__name">ELENA</a>
+                                    <span class="burse__time">
+                                        18.02.2020 в 14:32
+                                    </span>
+                                    <span class="burse__views">
+                                        <i class="fa-solid fa-eye"></i>
+                                        1542
+                                    </span>
+                                </div>
+                                <div class="burse__info">
+                                    <b>
+                                        Категория
+                                        <a href="" class="burse__category">Кошельки</a>
+                                    </b>
+                                    <span class="burse__answers">
+                                        Откликов мастеров
+                                        <b>12</b>
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="burse" data-id="5">
+                            <div class="burse__head">
+                                <a href="burse-page.html" class="burse__name">
+                                    Изготовить кошелек по референсным фотографиям
+                                </a>
+                                <span class="burse__price">
+                                    <b>Бюджет</b>
+                                    1600р.
+                                </span>
+                            </div>
+                            <div class="burse__body">
+                                <p class="burse__text">
+                                    Есть фотографии того что хотелось бы. Материал скорее всего кожа натуральная. Строчка
+                                    обязательно красная, так же очень нравится пуговки. Стоимость договорная
+                                </p>
+                                <img src="assets/images/items/item3.png" alt="" class="burse__img">
+                            </div>
+                            <div class="burse__footer">
+                                <div class="burse__author author">
+                                    <a href="" class="author__name">ELENA</a>
+                                    <span class="burse__time">
+                                        18.02.2020 в 14:32
+                                    </span>
+                                    <span class="burse__views">
+                                        <i class="fa-solid fa-eye"></i>
+                                        1542
+                                    </span>
+                                </div>
+                                <div class="burse__info">
+                                    <b>
+                                        Категория
+                                        <a href="" class="burse__category">Кошельки</a>
+                                    </b>
+                                    <span class="burse__answers">
+                                        Откликов мастеров
+                                        <b>12</b>
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="burse" data-id="6">
+                            <div class="burse__head">
+                                <a href="burse-page.html" class="burse__name">
+                                    Изготовить кошелек по референсным фотографиям
+                                </a>
+                                <span class="burse__price">
+                                    <b>Бюджет</b>
+                                    1600р.
+                                </span>
+                            </div>
+                            <div class="burse__body">
+                                <p class="burse__text">
+                                    Есть фотографии того что хотелось бы. Материал скорее всего кожа натуральная. Строчка
+                                    обязательно красная, так же очень нравится пуговки. Стоимость договорная
+                                </p>
+                                <img src="assets/images/items/item1.png" alt="" class="burse__img">
+                            </div>
+                            <div class="burse__footer">
+                                <div class="burse__author author">
+                                    <a href="" class="author__name">ELENA</a>
+                                    <span class="burse__time">
+                                        18.02.2020 в 14:32
+                                    </span>
+                                    <span class="burse__views">
+                                        <i class="fa-solid fa-eye"></i>
+                                        1542
+                                    </span>
+                                </div>
+                                <div class="burse__info">
+                                    <b>
+                                        Категория
+                                        <a href="" class="burse__category">Кошельки</a>
+                                    </b>
+                                    <span class="burse__answers">
+                                        Откликов мастеров
+                                        <b>12</b>
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="pagination">
+                        <div class="pagination__head">
+                            <button class="pagination__btn">
+                                Показать еще
+                            </button>
+                        </div>
+                    </div>            </div>
             </div>
-            <div class="new-items__body">
-                <div class="item" data-favorite="false" data-id-item=" 1" data-item-type="onsell">
-                    <a class="item__img-wrapper" href="item.html">
-                        <img src="assets/images/items/item1.png" alt="" class="item__img">
-                    </a>
-                    <button class="favorite-btn" type="button">
-                    </button>
-                    <div class="item__body">
-                        <div class="item__element">
-                            <span class="item__name" date-decoration="fiiled">
-                                Брошь цветок
-                            </span>
-                            <span class="item__price">
-                                500р
-                            </span>
-                        </div>
-                        <div class="item__element">
-                            <div class="item__user">
-                                <img src="assets/images/users/user2.png" alt="" class="item__avatar">
-                                <a class="item__user-name" href="">
-                                    MANYAKHANDMADA
-                                    <img src="assets/images/main/pro.svg" alt="" class="item__user-status">
-                                </a>
-                                <span class="item__likes">
-                                    <i class="fa-solid fa-thumbs-up"></i>39
-                                </span>
-                                <span class="item__views">
-                                    <i class="fa-solid fa-eye"></i> 1562
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item" data-favorite="false" data-id-item=" 2" data-item-type="onsell">
-                    <a class="item__img-wrapper" href="">
-                        <img src="assets/images/items/item2.png" alt="" class="item__img">
-                    </a>
-                    <button class="favorite-btn" type="button">
-                    </button>
-                    <div class="item__body">
-                        <div class="item__element">
-                            <span class="item__name" date-decoration="fiiled">
-                                Куколка бараш) из мультфима смешарики
-                            </span>
-                            <span class="item__price">
-                                500р
-                            </span>
-                        </div>
-                        <div class="item__element">
-                            <div class="item__user">
-                                <img src="assets/images/users/user2.png" alt="" class="item__avatar">
-                                <a class="item__user-name" href="">
-                                    MANYAKHANDMADA
-                                    <img src="assets/images/main/pro.svg" alt="" class="item__user-status">
-                                </a>
-                                <span class="item__likes">
-                                    <i class="fa-solid fa-thumbs-up"></i>39
-                                </span>
-                                <span class="item__views">
-                                    <i class="fa-solid fa-eye"></i> 1562
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item" data-favorite="false" data-id-item=" 3" data-item-type="onsell">
-                    <a class="item__img-wrapper" href="">
-                        <img src="assets/images/items/item3.png" alt="" class="item__img">
-                    </a>
-                    <button class="favorite-btn" type="button">
-                    </button>
-                    <div class="item__body">
-                        <div class="item__element">
-                            <span class="item__name" date-decoration="fiiled">
-                                Брошь цветок
-                            </span>
-                            <span class="item__price">
-                                500р
-                            </span>
-                        </div>
-                        <div class="item__element">
-                            <div class="item__user">
-                                <img src="assets/images/users/user2.png" alt="" class="item__avatar">
-                                <a class="item__user-name" href="">
-                                    MANYAKHANDMADA
-                                    <img src="assets/images/main/pro.svg" alt="" class="item__user-status">
-                                </a>
-                                <span class="item__likes">
-                                    <i class="fa-solid fa-thumbs-up"></i>39
-                                </span>
-                                <span class="item__views">
-                                    <i class="fa-solid fa-eye"></i> 1562
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="actions__btn button button_green">Больше новых изделий</a>
         </section>
-        <div class="underline underline_type3"></div>
-        <section class="last-view">
+        <!-- Slider main container -->
+        <div class="swiper main-swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper ">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img src="assets/images/main/slide1.png" alt="" class="swiper__img">
+              </div>
+              <div class="swiper-slide">  
+                <img src="assets/images/main/slide2.png" alt="" class="swiper__img">
+                </div>
+              <div class="swiper-slide"> 
+                 <img src="assets/images/main/slide1.png" alt="" class="swiper__img">
+                </div>
+            </div>
+            <div class="swiper__btns-wrapper" data-type-centered="block">
+                <div class="swiper__button swiper__button-prev rounded-btn rounded-btn_white">
+                    <i class="fa-solid fa-caret-left"></i>
+                </div>
+                <div class="swiper__button swiper__button-next rounded-btn rounded-btn_white">
+                    <i class="fa-solid fa-caret-right"></i>
+                </div>
+              </div>
+            <div class="swiper-pagination"></div>
+          </div>    <section class="last-view">
             <div class="last-view__hgroup hgroup">
                 <p class="last-view__subtitle hgroup__subtitle">  
                     Вы смотрели 
@@ -3520,8 +2290,7 @@
                     </div>
                 </a>
             </div>
-        </section>    <div class="underline underline_type2"></div>
-        <section class="write-us">
+        </section>    <section class="write-us">
             <img src="assets/images/main/hands.png" alt="" class="write-us__img">
             <div class="write-us__element">
                 <div class="write-us__wrapper">
@@ -3545,8 +2314,7 @@
                 </button>
                
             </div>
-         </section>    <div class="underline underline_type2"></div>
-        <section class="desc">
+         </section>    <section class="desc">
             <div class="desc__body">
                 <p class="desc__text">
                     Эксклюзивные вещи ручной работы были популярны во все времена. Это относилось ко всему: к предметам интерьера, одежде, аксессуарам .Hand made изделия всегда были в моде. Они ценилась в первую очередь за то, что изготовленные вещи были эксклюзивными, качественными.
@@ -3817,9 +2585,12 @@
                 </div>
             </div>
         </div>
-    </footer>    <script src="https://code.jquery.com/jquery-3.6.3.min.js" type="module"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" type="module"></script>
-    <script src="assets/js/main.js" type="module"></script>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/js/main.js" type="module" ></script>
+    <script src="assets/js/catalog.js" type="module"></script>
+    <script src="assets/js/burse.js" type="module"></script>
 </body>
 
 </html>
