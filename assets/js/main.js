@@ -198,7 +198,7 @@ $(document).ready(function () {
         $('.submenu.active').removeClass('active');
     })
 
-    $('.favorite-btn').on('click', function () {
+    $(document).on('click', '.favorite-btn', function () {
 
         let CurrentItem = CreateObjectItem($(this).parents('.item'));
         let Body = $('.moved-menu[data-type-menu="followed"] .moved-menu__body');
@@ -327,6 +327,7 @@ $(document).ready(function () {
             else {
                 $(`.moved-menu[data-type-menu='${CurrentTypeMenu}']`).removeClass('active');
                 $(this).removeClass('active');
+                $('body').removeClass('scrollBlock');
             }
         } catch (error) {
 
@@ -367,7 +368,7 @@ $(document).ready(function () {
                 try {
                     CurentMenu.removeClass('active');
                     $(`button[data-type-menu='${MenuType}']`).removeClass('active');
-                    $('body').removeClass('scrollBlock');     
+                    $('body').removeClass('scrollBlock');
                     alert('Ваша заявка находится на расмотрении');
                 } catch (error) {
                 }
@@ -472,6 +473,32 @@ $(document).ready(function () {
                                 <i class="fa-solid fa-xmark"></i>
                             </button>`);
                             break;
+                        case 'specialization':
+                            let specialization = {
+                                id: label.attr('data-id-specialization'),
+                                name: label.attr('data-name-specialization'),
+                            }
+                            $('.catalog__filter-wrapper').append(` 
+                            <button class="catalog__btn" data-action="removefilter">
+                                <span class="catalog__filter-name">
+                                    ${specialization.name}
+                                </span>
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>`);
+                            break;
+                        case 'special':
+                            let speacial = {
+                                id: label.attr('data-id-special'),
+                                name: label.attr('data-name-special'),
+                            }
+                            $('.catalog__filter-wrapper').append(` 
+                                <button class="catalog__btn" data-action="removefilter">
+                                    <span class="catalog__filter-name">
+                                        ${speacial.name}
+                                    </span>
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>`);
+                            break;
                     }
                 })
                 $(this).parents('.moved-menu').removeClass('active');
@@ -513,6 +540,7 @@ $(document).ready(function () {
     }
     LoadAllNotifitations();
 
+
     $('.switcher__btn').on('click', function () {
         $(this).toggleClass('active');
         $(this).parents('.switcher').toggleClass('active');
@@ -522,6 +550,42 @@ $(document).ready(function () {
         $(this).slideUp(300, function () {
             $(this).remove();
         });
+    })
+
+    $('.message-opener').on("click", function () {
+        if ($(this).attr('data-type-message') == 'unview') {
+            let countMessage = $(this).find('.message-opener__count').text().trim();
+            $(this).removeAttr('data-type-message');
+            $(this).find('.message-opener__count').remove();
+            let AllMessageNotificaitons = $('button[data-type-menu="message"] .notification-count');
+            for (let index = 0; index < AllMessageNotificaitons.length; index++) {
+                if (Number(AllMessageNotificaitons[index].innerText) - Number(countMessage) == 0) {
+                    AllMessageNotificaitons[index].innerText = "";
+                    $('button[data-type-menu="message"] .moved-menu__count_orange').text('');
+                }
+                else {
+                    AllMessageNotificaitons[index].innerText = Number(AllMessageNotificaitons[index].innerText) - Number(countMessage)
+                    $('button[data-type-menu="message"] .moved-menu__count_orange').text(`+${Number(AllMessageNotificaitons[index].innerText) - Number(countMessage)}`);
+                }
+                LoadAllNotifitations();
+            }
+        }
+    })
+    $('.message__btn').on('click', function () {
+        let input = $(this).parents('.message').find('.message__input');
+        let date = new Date();
+        let MessageDate = `${date.getFullYear().toString().slice(-2)}.${(
+            "0" + (date.getMonth() + 1)).slice(-2)}.${(
+                "0" + date.getDate()).slice(-2)} ${(
+                    "0" + date.getHours()).slice(-2)}:${(
+                        "0" + date.getMinutes()).slice(-2)}`;
+        if (input.val().trim() != "") {
+            $(this).parents('.message').find('.message__wrapper').append(`
+            <div class="message__item" data-author="you">
+                                    <span>Вы <span>${MessageDate}</span></span>
+                                    <p class="message__text">${input.val()}</p></div>`);
+            input.val('');
+        }
     })
 })
 //Инициализация двойного Range
@@ -631,7 +695,7 @@ function CreateDOMItem(Item) {
         <a class="item__img-wrapper" href="">
             <img src="${Item.img}" alt="" class="item__img">
         </a>
-        <button class="favorite-btn" type="button" onclick='DeleteFavorite(event)'>           
+        <button class="favorite-btn" type="button">           
         </button>
         <div class="item__body">
             <div class="item__element">
@@ -681,7 +745,7 @@ function CreateDOMItem(Item) {
         <a class="item__img-wrapper" href="">
             <img src="${Item.img}" alt="" class="item__img">
         </a>
-        <button class="favorite-btn" type="button" onclick='DeleteFavorite(event)'>           
+        <button class="favorite-btn" type="button">           
         </button>
         <div class="item__body">
             <div class="item__element">
@@ -721,29 +785,4 @@ function GetCurrentYpos() {
 // Получаем полную высоту страницы
 function GetHeightPage() {
     return document.documentElement.scrollHeight - document.documentElement.clientHeight;
-}
-// Функция удаления из избранного
-function DeleteFavorite(event) {
-    let item = event.target.closest('.item');
-    let Body = $('.moved-menu[data-type-menu="followed"] .moved-menu__body');
-    let id = item.getAttribute('data-id-item');
-    item.remove();
-    ChangeCountNotfication('followed', 'minus');
-    $(`.item[data-id-item='${id}']`).attr('data-favorite', 'false')
-    Body.find(`.item[data-id-item='${id}']`).remove();
-    if (Body.find('.item').length == 0) {
-        Body.find('.moved-menu__wrapper').empty();
-        Body.attr('data-body-type', 'empty');
-        Body.append(` <img src="assets/images/main/empty_moved-icon.svg" alt="" class="moved-menu__img">
-               <hgroup class="moved-menu__hgroup">
-                  <h2 class="moved-menu__title">
-                      В избранном пусто
-                  </h2>
-                  <p class="moved-menu__subtitle">
-                      Добавляйте в избранное понравившиеся изделия, чтобы быстро их находить.
-                          Чтобы добавить в избранное нажимайте у изделий на сердечко:
-                  </p>
-               </hgroup>
-               <img src="assets/images/main/heart-icon__filled.svg" alt="" class="moved-menu__img">`)
-    }
 }
