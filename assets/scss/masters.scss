@@ -1,0 +1,139 @@
+@import 'colors';
+.filter{
+    @media (min-width:1366px) {
+        top: 0!important;
+    }
+}
+.catalog{
+    &__title{
+        margin-bottom: 0;
+    }
+    &__item-wrapper{
+        grid-template-columns: 1fr 1fr;
+        display: grid;
+        @media (max-width:1024px) {
+                grid-template-columns: 1fr;
+        }
+    }
+}
+.master{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 2px 2px 2px $lightgray;
+    border: 3px solid $lightgray;
+    @media (max-width:768px) {
+        padding: 15px;
+    }
+    &__body{
+        display: grid;
+        grid-template-columns: 1fr 120px;
+    }
+    &__avatar{
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
+        object-position: center;
+    }
+    &__element{
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+    &__specialization{
+        display: flex;
+        gap: 5px;
+        color:$gray;
+        font-weight: bold;
+    }
+    &__name{
+        font-weight: bold;
+
+        color:$black;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    &__city{
+        color:$gray;
+        font-weight: bold;
+    }
+    &__shop{
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+    &__subtitle{
+        font-size: 18px;
+        border-bottom: 2px solid $lightgray;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+    &__btn-wrapper{
+        margin-bottom: 20px;
+    }
+    &__btn{
+        width: 100%;
+        background-color: $green;
+        color: $white;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 11px;
+        border-radius: 15px;
+    }
+    &__link{
+        color:$black;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    &__img{
+     height: 121px;
+     width: 100%;
+     overflow: hidden;
+     object-fit: cover;
+     object-position: center;
+     border-radius: 5px;
+    }
+    &__img-wrapper{
+        display: flex;
+        gap: 20px;
+        &:empty ~ .master__subtitle{
+            display: none;
+        }
+        a{
+            display: none;
+            @media (max-width:1024px) {
+                display: block;
+            }
+            @media (max-width:500px) {
+                display: none;
+            }
+        }
+        @for $i from 1 through 4 {
+            a:nth-of-type(#{$i}){
+                display: block;
+                @media (max-width:500px) {
+                    display: none;
+                }
+            }
+          }
+        @media (max-width:500px) {
+            @for $i from 1 through 3 {
+                a:nth-of-type(#{$i}){
+                    display: block;
+                }
+              }    
+        }    
+    }
+}
+.rating{
+    &__star{
+        height: 18px;
+        width: 18px;
+    }
+    font-size: 16px;
+}

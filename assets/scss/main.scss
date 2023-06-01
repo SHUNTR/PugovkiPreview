@@ -1250,6 +1250,48 @@ section {
         }
     }
 
+    &[data-type-menu='message'],
+    &[data-type-menu='registration'],
+    &[data-type-menu='login'] {
+        width: 100%;
+    }
+
+    &[data-type-menu='registration'],
+    &[data-type-menu='login'] {
+        .moved-menu__body {
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            overflow: hidden;
+            flex-direction: column;
+        .moved-menu__input-wrapper{
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        input{
+            padding: 10px 5px;
+            border: 1px solid $border;
+        }
+        textarea{
+            padding: 10px 5px;
+            border: 1px solid $border;
+            resize: none;
+        }
+            .moved-menu__btn {
+                margin-top: auto;
+                text-align: center;
+                background-color: $green;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                color: $white;
+            }
+        }
+    }
+
     &[data-type-menu='profile'] {
         .moved-menu__header {
             padding-top: 26px;
@@ -1500,6 +1542,130 @@ section {
     }
 }
 
+// message-opener
+.message-opener {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-weight: bold;
+    background-color: $white;
+    padding: 10px 30px;
+
+    &[ data-type-message="unview"] {
+        background-color: $orangeopacity;
+        color: $orange;
+
+        &:hover {
+            color: $white;
+            background-color: $orange;
+
+            .message-opener__count {
+                background-color: $green;
+            }
+        }
+
+        .message-opener__name {
+            border: none;
+        }
+
+        .message-opener__count {
+            transition: .3s;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            background-color: $orange;
+            color: $white
+        }
+    }
+
+    &:hover {
+        background-color: $lightgray;
+    }
+
+    &__name {
+        font-weight: bold;
+        font-size: 18px;
+        width: 100%;
+        display: block;
+        height: 100%;
+        text-align: left;
+        margin-right: auto;
+    }
+
+    &__img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+// Cообщения
+.message {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        max-height: 100%;
+    }
+
+    &__input {
+        margin-top: auto;
+        resize: none;
+        width: 100%;
+        min-height: 75px;
+        padding: 15px;
+        border-top: 2px solid $lightgray;
+    }
+
+    &__btn {
+        padding: 15px;
+        background-color: $greenopacity;
+        color: $green;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+
+        &:hover {
+            background-color: $green;
+            color: $white
+        }
+    }
+
+    &__item {
+        &>span {
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            gap: 5x;
+            width: 100%;
+            justify-content: flex-end;
+        }
+
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px 30px;
+        border-bottom: 1px solid $border;
+
+        &[data-author="interviewer"] {
+            text-align: right;
+            background-color: $lightgray
+        }
+
+        &:last-of-type {
+            border: none;
+        }
+    }
+}
+
 // Подменю
 .submenu {
     transition: .3s;
@@ -1530,8 +1696,9 @@ section {
     }
 
     & &__body {
+        height: 100%;
         max-height: calc(100vh - 175px);
-        overflow-y: scroll;
+        overflow-y: auto;
 
         ::-webkit-scrollbar {
             width: 6px;

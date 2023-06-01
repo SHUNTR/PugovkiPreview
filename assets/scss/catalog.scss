@@ -53,9 +53,10 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-        margin-bottom: 40px;
+        &:not(:empty){
+            margin-bottom: 40px;
+        }
     }
-
     &__filter-wrapper {
         display: none;
         flex-wrap: wrap;

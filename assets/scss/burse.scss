@@ -234,6 +234,7 @@
         width: 86px;
         height: 86px;
         border-radius: 8px;
+
         @media (max-width:500px) {
             display: none;
         }
@@ -246,6 +247,7 @@
     &__head {
         display: flex;
         justify-content: space-between;
+
         @media (max-width:500px) {
             flex-direction: column-reverse;
         }
@@ -342,7 +344,7 @@
                 padding: 0 18px;
             }
 
-            .select{
+            .select {
                 .moved-menu__btn {
                     background-color: $orange;
                     margin-top: auto;
@@ -351,12 +353,14 @@
 
                 }
             }
+
             .moved-menu__btn {
                 background-color: $green;
                 color: $white;
                 margin-top: auto;
                 text-align: center;
                 justify-content: center;
+
                 span {
                     margin-right: auto;
                 }
@@ -395,3 +399,4 @@
         }
     }
 }
+
