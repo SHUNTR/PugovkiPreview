@@ -59,6 +59,9 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.catalog__selected-filters:not(:empty) {
     margin-bottom: 40px;
 }
 

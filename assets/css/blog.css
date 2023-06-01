@@ -1,0 +1,228 @@
+.blog {
+    max-width: 1920px;
+    padding: 20px 210px;
+    margin: 0 auto;
+}
+
+.blog__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.blog__title {
+    font-size: 50px;
+}
+
+.blog__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.blog__item {
+    padding-right: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid #F1F3F4;
+}
+
+.blog__item:nth-last-of-type(1) {
+    padding-bottom: 20px;
+    border: none;
+}
+
+.blog__item:nth-last-of-type(2) {
+    padding-bottom: 20px;
+    border: none;
+}
+
+.blog__item:nth-last-of-type(3) {
+    padding-bottom: 20px;
+    border: none;
+}
+
+.blog__link {
+    font-size: 25px;
+    color: #A5A5A5;
+    transition: 0.3s;
+    margin-bottom: 10px;
+    font-weight: bold;
+    display: block;
+}
+
+.blog__link:hover {
+    color: #f63;
+    text-decoration: underline;
+}
+
+.blog__text {
+    width: 100%;
+}
+
+.blog__img {
+    height: 86px;
+    width: 86px;
+    float: right;
+    border-radius: 4px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+}
+
+@media (max-width: 1366px) {
+    .blog {
+        padding: 0px 117px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .blog {
+        padding: 0px 60px;
+    }
+
+    .blog__body {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog {
+        padding: 0px 30px;
+    }
+
+    .blog__title {
+        text-align: center;
+        width: 100%;
+        font-size: 40px;
+    }
+
+    .blog__header {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 767px) {
+    .blog__body {
+        grid-template-columns: 1fr;
+    }
+
+    .blog__link {
+        font-size: 20px;
+    }
+}
+
+.blog__btn {
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    background-color: #85ba40;
+    color: #fff;
+    border-radius: 85px;
+    font-weight: bold;
+}
+
+.blog__btn:hover {
+    background-color: black;
+}
+
+.moved-menu[data-type-menu=addblog] {
+    width: 100%;
+    max-width: none;
+}
+
+.moved-menu[data-type-menu=addblog] .moved-menu__body {
+    max-width: 1500px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding: 0 36px;
+}
+
+.moved-menu[data-type-menu=addblog] .moved-menu__body::-webkit-scrollbar {
+    width: 0;
+}
+
+@media (max-width: 1024px) {
+    .moved-menu[data-type-menu=addblog] .moved-menu__body {
+        padding: 0 18px;
+    }
+}
+
+.moved-menu[data-type-menu=addblog] .moved-menu__body .select .moved-menu__btn {
+    background-color: #f63;
+    margin-top: auto;
+    text-align: center;
+    justify-content: flex-start;
+}
+
+.moved-menu[data-type-menu=addblog] .moved-menu__body .moved-menu__btn {
+    background-color: #85ba40;
+    color: #fff;
+    margin-top: auto;
+    text-align: center;
+    justify-content: center;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.moved-menu[data-type-menu=addblog] .moved-menu__body .moved-menu__btn span {
+    margin-right: auto;
+}
+
+.moved-menu[data-type-menu=addblog] .moved-menu__text {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.moved-menu[data-type-menu=addblog] .moved-menu__input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.moved-menu[data-type-menu=addblog] .moved-menu__input {
+    border-radius: 2px;
+    padding: 15px;
+    border: 3px solid #F1F3F4;
+    box-shadow: 0px 2px 2px 2px #F1F3F4;
+}
+
+.moved-menu[data-type-menu=addblog] .moved-menu__text-area {
+    padding: 15px;
+    border: 3px solid #F1F3F4;
+    box-shadow: 0px 2px 2px 2px #F1F3F4;
+    resize: none;
+    height: 150px;
+}
+
+.author {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.author__img {
+    height: 26px;
+    width: 26px;
+    border-radius: 50px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+}
+
+.author__link {
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.author__link:hover {
+    text-decoration: underline;
+}
