@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/cb18628afa.js" crossorigin="anonymous"></script>
-    <title>Пуговки - Каталог изделий</title>    <link rel="stylesheet" href="assets/css/burse.css">
+    <title>Пуговки - Каталог изделий</title>    <link rel="stylesheet" href="assets/css/burse-page.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 </head>
 
 <body>
@@ -212,7 +213,7 @@
                         </a>
                     </li>
                     <li class="main-header__item">
-                        <a href="" class="main-header__btn">
+                        <a href="masters.html" class="main-header__btn">
                             <i class="fa-solid fa-users"></i>
     
                             <span class="main-header__btn-text">
@@ -243,7 +244,7 @@
                                     </a>
                                 </li>
                                 <li class="popup__item">
-                                    <a href="" class="popup__link">
+                                    <a href="masters.html" class="popup__link">
                                         <span class="popup__icon"><i class="fa-solid fa-users"></i></span>
                                         <span class="popup__text">Мастера</span>
                                     </a>
@@ -260,7 +261,7 @@
                                     </a>
                                 </li>
                                 <li class="popup__item">
-                                    <a href="" class="popup__link">
+                                    <a href="blog.html" class="popup__link">
                                         <span class="popup__icon"><i class="fa-solid fa-book"></i></span>
                                         <span class="popup__text">Блог мастеров</span>
                                     </a>
@@ -333,10 +334,10 @@
                             <span class="notification-count"></span>
                         </button>
                     </li>
-                    <li class="profile__item">
-                        <button class="profile__btn">
+                    <li class="profile__item data-moved-menu='true'">
+                        <button class="profile__btn moved-menu-opener" data-type-menu="message">
                             <i class="fa-regular fa-comment"></i>
-                            <span class="notification-count"></span>
+                            <span class="notification-count">3</span>
                         </button>
                     </li>
                     <li class="profile__item">
@@ -554,6 +555,201 @@
             </ul>
         </div>
     </div>
+    <div class="moved-menu moved-menu_left" data-type-menu="message">
+        <header class="moved-menu__header">
+            <div class="moved-menu__element">
+                <h2 class="moved-menu__title">
+                    Сообщения
+                </h2>
+            </div>
+            <button class="moved-menu__btn rounded-btn rounded-btn_white" data-action="close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </header>
+        <div class="moved-menu__body">
+            <ul class="moved-menu__list">
+                <li class="moved-menu__item">
+                    <button class="message-opener submenu-opener" data-type-message="unview">
+                        <img src="assets/images/users/user3.png" alt="" class="message-opener__img">
+                        <span class="message-opener__name">
+                            ELENA GRAND
+                        </span>
+                        <span class="message-opener__count">
+                            3
+                        </span>
+                    </button>
+                    <div class="submenu">
+                        <header class="submenu__header">
+                            <h2 class="submenu__title">
+                                Чат с ELENA GRAND
+                            </h2>
+                            <button class="submenu__btn rounded-btn rounded-btn_white" data-action="close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </header>
+                        <div class="submenu__body">
+                            <div class="message">
+                                <div class="message__wrapper">
+                                    <div class="message__item" data-author="interviewer">
+                                        <span>Собеседник <span>23.05.30 16:31</span></span>
+                                        <p class="message__text">Привет!</p>
+                                    </div>
+                                    <div class="message__item" data-author="interviewer">
+                                        <span>Собеседник <span>23.05.30 16:31</span></span>
+                                        <p class="message__text">Хочу предложить вам интересное предолжение</p>
+                                    </div>
+                                    <div class="message__item" data-author="you">
+                                        <span>Вы <span>23.05.30 16:31</span></span>
+                                        <p class="message__text">Здравствуйте</p>
+                                    </div>
+                                    <div class="message__item" data-author="you">
+                                        <span>Вы <span>23.05.30 16:31</span></span>
+                                        <p class="message__text">Ну, расскажите о нем</p>
+                                    </div>
+                                </div>
+                                <textarea placeholder="Ваше сообщение" class="message__input"></textarea>
+                                <button class="message__btn" type="button">
+                                    Отправить сообщение
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="moved-menu__item">
+                    <button class="message-opener submenu-opener">
+                        <img src="assets/images/users/user3.png" alt="" class="message-opener__img">
+                        <span class="message-opener__name">
+                            ELENA GRAND
+                        </span>
+                        <span class="message-opener__count"></span>
+                    </button>
+                    <div class="submenu">
+                        <header class="submenu__header">
+                            <h2 class="submenu__title">
+                                Чат с ELENA GRAND
+                            </h2>
+                            <button class="submenu__btn rounded-btn rounded-btn_white" data-action="close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </header>
+                        <div class="submenu__body">
+    
+                        </div>
+                    </div>
+                </li>
+                <li class="moved-menu__item">
+                    <button class="message-opener submenu-opener">
+                        <img src="assets/images/users/user3.png" alt="" class="message-opener__img">
+                        <span class="message-opener__name">
+                            ELENA GRAND
+                        </span>
+                        <span class="message-opener__count"></span>
+                    </button>
+                    <div class="submenu">
+                        <header class="submenu__header">
+                            <h2 class="submenu__title">
+                                Чат с ELENA GRAND
+                            </h2>
+                            <button class="submenu__btn rounded-btn rounded-btn_white" data-action="close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </header>
+                        <div class="submenu__body">
+    
+                        </div>
+                    </div>
+                </li>
+                <li class="moved-menu__item">
+                    <button class="message-opener submenu-opener">
+                        <img src="assets/images/users/user3.png" alt="" class="message-opener__img">
+                        <span class="message-opener__name">
+                            ELENA GRAND
+                        </span>
+                        <span class="message-opener__count"></span>
+                    </button>
+                    <div class="submenu">
+                        <header class="submenu__header">
+                            <h2 class="submenu__title">
+                                Чат с ELENA GRAND
+                            </h2>
+                            <button class="submenu__btn rounded-btn rounded-btn_white" data-action="close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </header>
+                        <div class="submenu__body">
+    
+                        </div>
+                    </div>
+                </li>
+                <li class="moved-menu__item">
+                    <button class="message-opener submenu-opener">
+                        <img src="assets/images/users/user3.png" alt="" class="message-opener__img">
+                        <span class="message-opener__name">
+                            ELENA GRAND
+                        </span>
+                        <span class="message-opener__count"></span>
+                    </button>
+                    <div class="submenu">
+                        <header class="submenu__header">
+                            <h2 class="submenu__title">
+                                Чат с ELENA GRAND
+                            </h2>
+                            <button class="submenu__btn rounded-btn rounded-btn_white" data-action="close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </header>
+                        <div class="submenu__body">
+    
+                        </div>
+                    </div>
+                </li>
+                <li class="moved-menu__item">
+                    <button class="message-opener submenu-opener">
+                        <img src="assets/images/users/user3.png" alt="" class="message-opener__img">
+                        <span class="message-opener__name">
+                            ELENA GRAND
+                        </span>
+                        <span class="message-opener__count"></span>
+                    </button>
+                    <div class="submenu">
+                        <header class="submenu__header">
+                            <h2 class="submenu__title">
+                                Чат с ELENA GRAND
+                            </h2>
+                            <button class="submenu__btn rounded-btn rounded-btn_white" data-action="close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </header>
+                        <div class="submenu__body">
+    
+                        </div>
+                    </div>
+                </li>
+                <li class="moved-menu__item">
+                    <button class="message-opener submenu-opener">
+                        <img src="assets/images/users/user3.png" alt="" class="message-opener__img">
+                        <span class="message-opener__name">
+                            ELENA GRAND
+                        </span>
+                        <span class="message-opener__count"></span>
+                    </button>
+                    <div class="submenu">
+                        <header class="submenu__header">
+                            <h2 class="submenu__title">
+                                Чат с ELENA GRAND
+                            </h2>
+                            <button class="submenu__btn rounded-btn rounded-btn_white" data-action="close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </header>
+                        <div class="submenu__body">
+    
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
     <div class="moved-menu moved-menu_left" data-type-menu="more">
         <header class="moved-menu__header">
             <div class="moved-menu__element">
@@ -585,7 +781,7 @@
                     </a>
                 </li>
                 <li class="moved-menu__item">
-                    <a class="moved-menu__link" href="#">
+                    <a class="moved-menu__link" href="blog.html">
                         <span class="moved-menu__icon"><i class="fa-solid fa-book"></i></span>
                         <span class="moved-menu__text">Блог мастеров</span>
                     </a>
@@ -638,6 +834,62 @@
                     </a>
                 </li>
             </ul>
+        </div>
+    </div>
+    <div class="moved-menu moved-menu_left" data-type-menu="login">
+        <header class="moved-menu__header">
+            <div class="moved-menu__element">
+                <h2 class="moved-menu__title">
+                    Авторизация
+                </h2>
+            </div>
+            <button class="moved-menu__btn rounded-btn rounded-btn_white" data-action="close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </header>
+        <div class="moved-menu__body">
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">Логин</span>
+                <input type="text" class="moved-menu__input" placeholder="Логин">
+            </div>
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">Пароль</span>
+                <input type="password" class="moved-menu__input" placeholder="Пароль">
+            </div>
+            <button class="moved-menu__btn" data-action="AddBurse">Авторизация</button>  
+        </div>
+    </div>
+    <div class="moved-menu moved-menu_left" data-type-menu="registration">
+        <header class="moved-menu__header">
+            <div class="moved-menu__element">
+                <h2 class="moved-menu__title">
+                    Регистрация 
+                </h2>
+            </div>
+            <button class="moved-menu__btn rounded-btn rounded-btn_white" data-action="close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </header>
+        <div class="moved-menu__body">
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">Логин</span>
+                <input type="text" class="moved-menu__input" placeholder="Логин">
+            </div>
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">Пароль</span>
+                <input type="password" class="moved-menu__input" placeholder="Пароль">
+            </div>
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">Город</span>
+                <input type="text" class="moved-menu__input" placeholder="Ваш Город">
+            </div>
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">О себе</span>
+                <textarea class="moved-menu__text-area"
+                    placeholder="О себе">
+                </textarea>
+            </div>  
+            <button class="moved-menu__btn" data-action="AddBurse">Регистрация</button>  
         </div>
     </div>
     <div class="moved-menu moved-menu_left" data-type-menu="profile">
@@ -725,11 +977,12 @@
                         <span class="moved-menu__text">Уведомления</span>
                     </a>
                 </li>
-                <li class="moved-menu__item">
-                    <a class="moved-menu__link" href="#">
+                <li class="moved-menu__item" data-type-menu="message">
+                    <button class="moved-menu__link moved-menu-opener" data-type-menu="message">
                         <span class="moved-menu__icon"><i class="fa-solid fa-book"></i></span>
                         <span class="moved-menu__text">Сообщения</span>
-                    </a>
+                        <span class="moved-menu__count moved-menu__count_orange">+3</span>
+                    </button>
                 </li>
             </ul>
             <ul class="moved-menu__list">
@@ -747,7 +1000,7 @@
                         <span class="moved-menu__icon"><i class="fa-solid fa-book"></i></span>
                         <span class="moved-menu__text">Мои товары и аукционы</span>
                         <span class="moved-menu__count">12</span>
-                        <span class="moved-menu__count moved-menu__count_orange">+3</span>
+                        <span class="moved-menu__count moved-menu__count_orange">+1</span>
                     </a>
                     <button class="moved-menu__btn  rounded-btn_small rounded-btn rounded-btn_green"><i
                             class="fa-solid fa-plus"></i></button>
@@ -811,7 +1064,7 @@
             </ul>
             <ul class="moved-menu__list">
                 <li class="moved-menu__item_title">
-                    Профиль мастера
+                    Профиль
                 </li>
                 <li class="moved-menu__item moved-menu__item_notification notification" data-type-notification="danger">
                     <div class="rounded-btn rounded-btn_orange  rounded-btn_small"> <i class="fa-solid fa-exclamation"></i>
@@ -828,7 +1081,7 @@
                             class="fa-solid fa-xmark"></i></button>
                 </li>
                 <li class="moved-menu__item">
-                    <a class="moved-menu__link" href="#">
+                    <a class="moved-menu__link" href="profile.html">
                         <span class="moved-menu__icon"><i class="fa-solid fa-bucket"></i></span>
                         <span class="moved-menu__text">Моя страница</span>
                         <span class="moved-menu__count"></span>
@@ -844,8 +1097,16 @@
             </ul>
             <ul class="moved-menu__list">
                 <li class="moved-menu__item">
-                    <button class="moved-menu__btn moved-menu__btn_rectangle"><i
+                    <button class="moved-menu__btn moved-menu__btn_rectangle m"><i
                             class="fa-solid fa-arrow-right-from-bracket"></i> Выход</button>
+                </li>
+                <li class="moved-menu__item" data-moved-menu="true">
+                    <button class="moved-menu__btn moved-menu__btn_rectangle moved-menu-opener" data-type-menu="login"><i
+                            class="fa-solid fa-arrow-right-from-bracket"></i> Логин</button>
+                </li>
+                <li class="moved-menu__item" data-moved-menu="true">
+                    <button class="moved-menu__btn moved-menu__btn_rectangle moved-menu-opener" data-type-menu="registration"><i
+                            class="fa-solid fa-arrow-right-from-bracket"></i> Регистрация</button>
                 </li>
             </ul>
         </div>
@@ -877,14 +1138,14 @@
                         <div class="popup popup_left">
                             <ul class="popup__list">
                                 <li class="popup__item">
-                                    <a href="" class="popup__link">
+                                    <button class="popup__link">
                                         <i class="fa-solid fa-plus"></i>
                                         <span class="popup__text">Добавить товар</span>
-                                    </a>
+                                    </button>
     
                                 </li>
                                 <li class="popup__item">
-                                    <a href="" class="popup__link">
+                                    <a href="blog.html" class="popup__link">
                                         <span class="popup__icon"><i class="fa-regular fa-address-book"></i></span>
                                         <span class="popup__text">Добавить запись в блог</span>
                                     </a>
@@ -898,10 +1159,10 @@
                             <span class="notification-count"></span>
                         </button>
                     </li>
-                    <li class="main-aside__item">
-                        <button class="main-aside__btn">
+                    <li class="main-aside__item" data-moved-menu='true'>
+                        <button class="main-aside__btn moved-menu-opener" data-type-menu="message">
                             <i class="fa-regular fa-comment"></i>
-                            <span class="notification-count"></span>
+                            <span class="notification-count">3</span>
                         </button>
                     </li>
                     <li class="main-aside__item"="">
@@ -1110,7 +1371,7 @@
                                 </a>
                             </li>
                             <li class="popup__item">
-                                <a href="" class="popup__link">
+                                <a href="masters.html" class="popup__link">
                                     <span class="popup__icon"><i class="fa-solid fa-users"></i></span>
                                     <span class="popup__text">Мастера</span>
                                 </a>
@@ -1127,7 +1388,7 @@
                                 </a>
                             </li>
                             <li class="popup__item">
-                                <a href="" class="popup__link">
+                                <a href="blog.html" class="popup__link">
                                     <span class="popup__icon"><i class="fa-solid fa-book"></i></span>
                                     <span class="popup__text">Блог мастеров</span>
                                 </a>
@@ -1200,10 +1461,10 @@
                         <span class="notification-count"></span>
                     </button>
                 </li>
-                <li class="profile__item">
-                    <button class="profile__btn">
+                <li class="profile__item" data-moved-menu='true'>
+                    <button class="profile__btn moved-menu-opener" data-type-menu="message">
                         <i class="fa-regular fa-comment"></i>
-                        <span class="notification-count"></span>
+                        <span class="notification-count">3</span>
                     </button>
                 </li>
                 <li class="profile__item">
@@ -1411,7 +1672,7 @@
                                 </a>
                             </li>
                             <li class="popup__item">
-                                <a href="" class="popup__link">
+                                <a href="masters.html" class="popup__link">
                                     <span class="popup__icon"><i class="fa-solid fa-users"></i></span>
                                     <span class="popup__text">Мастера</span>
                                 </a>
@@ -1428,7 +1689,7 @@
                                 </a>
                             </li>
                             <li class="popup__item">
-                                <a href="" class="popup__link">
+                                <a href="blog.html" class="popup__link">
                                     <span class="popup__icon"><i class="fa-solid fa-book"></i></span>
                                     <span class="popup__text">Блог мастеров</span>
                                 </a>
@@ -1525,7 +1786,7 @@
                 </a>
             </li>
             <li class="moved-aside__item">
-                <a href="" class="moved-aside__btn">
+                <a href="masters.html" class="moved-aside__btn">
                     <span class="moved-aside__icon">
                         <i class="fa-solid fa-users"></i>
                     </span>
@@ -1562,7 +1823,88 @@
     </aside>
     <a class="main-aside__btn_top moved rounded-btn" href="#main-header">
         <i class="fa-solid fa-caret-up"></i>
-    </a>    <main class="main-container">
+    </a>    <div class="moved-menu" data-type-menu="AddBurse">
+        <header class="moved-menu__header">
+            <div class="moved-menu__element">
+                <span class="moved-menu__icon">
+                    <i class="fa-regular fa-heart"></i>
+                </span>
+                <h2 class="moved-menu__title">
+                    Изменить заявку
+                </h2>
+            </div>
+            <button class="moved-menu__btn rounded-btn rounded-btn_white" data-action="close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </header>
+        <div class="moved-menu__body">
+            <p class="moved-menu__text">
+                Разместите свою задачу на бирже. Ваш проект станет видимым для тысяч фрилансеров, и некоторые из них сделают
+                вам предложения. Изучите их рейтинг, портфолио и выберите лучших из них. Подтвердите заказ, когда будете
+                удовлетворены результатом на 100%. Только после этого оплата спишется в пользу продавца.
+            </p>
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">Название задачи</span>
+                <input type="text" class="moved-menu__input" placeholder="Введите название задачи">
+            </div>
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">Выберите категорию</span>
+                <div class="select" data-select="true">
+                    <button class="select-opener moved-menu__btn" type="button">
+                        <span class="select__text">
+                            Категория
+                        </span>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </button>
+                    <div class="select__body">
+                        <ul class="select__list">
+                            <li class="select__item">
+                                <button class="select__btn" type="button">
+                                    Одежда и обувь
+                                </button>
+                            </li>
+                            <li class="select__item">
+                                <button class="select__btn" type="button">
+                                    Куклы и игрушки
+                                </button>
+                            </li>
+                            <li class="select__item">
+                                <button class="select__btn" type="button">
+                                    Аксесуары
+                                </button>
+                            </li>
+                            <li class="select__item">
+                                <button class="select__btn" type="button">
+                                    Украшения
+                                </button>
+                            </li>
+                            <li class="select__item">
+                                <button class="select__btn" type="button">
+                                    Красота и здоровье
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">Детальное описание задачи</span>
+                <textarea class="moved-menu__text-area"
+                    placeholder="Опишите, что именно вам нужно, в каком объеме и за какой срок">
+                </textarea>
+            </div>
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">Цена не более,руб</span>
+                <input type="number" class="moved-menu__input" inputmode="numeric">
+            </div>
+            <div class="moved-menu__input-wrapper">
+                <span class="moved-menu__input-desc">Загрузите пример похожего изделия</span>
+                <input type="file" class="moved-menu__input" inputmode="">
+            </div>
+            <button class="moved-menu__btn" data-action="AddBurse">Отправить на проверку</button>
+        </div>
+    </div>
+    <main class="main-container">
         <!-- Slider main container -->
         <div class="swiper main-swiper">
             <!-- Additional required wrapper -->
@@ -1600,7 +1942,144 @@
                     </a>
                 </li>     
             </ul>
-        </nav>    <!-- Slider main container -->
+        </nav>    <section class="burse-page">
+            <div class="burse-page__body">
+                <div class="burse-page__element">
+                    <h2 class="burse-page__title">
+                        Изготовить кошелек по референсным фотографиям
+                    </h2>
+                    <p class="burse-page__text">
+                        Есть фотографии того что хотелось бы. Материал скорее всего кожа натуральная. Строчка обязательно
+                        красная, так же очень нравится пуговки. Есть фотографии того что хотелось бы. Материал скорее всего
+                        кожа натуральная. Строчка обязательно красная, так же очень нравится пуговки.
+                        <br>
+                        Материал скорее всего кожа натуральная. Строчка обязательно красная, так же очень нравится пуговки.
+                    </p>
+                    <a href="assets/images/items/item13.1.png" data-fancybox="gallery">
+                        <img src="assets/images/items/item13.1.png" alt="" class="burse-page__img">
+                    </a>
+                    <div class="burse-page__desc">
+                        <span class="burse-page__info">
+                            <b>Раздел:</b> <a href="">Женская одежда</a>
+                        </span>
+                        <span class="burse-page__info">
+                            <b>Город:</b> <span class="burse-page__text">Тольятти</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="burse-page__element">
+                    <span class="burse-page__status" data-status="hidden">Заявка скрыта</span>
+                    <div class="burse-page__desc">
+                        <span class="burse-page__info">
+                            <b>Заказчик:</b> <a href="">ELENA</a>
+                        </span>
+                        <span class="burse-page__info">
+                            <b>Опубликовано:</b> <span class="burse-page__text">17.03.2020 в 16:21</span>
+                        </span>
+                        <span class="burse-page__info">
+                            <b>На заявку ответили :</b> <span class="burse-page__text">5 мастеров</span>
+                        </span>
+                    </div>
+                    <div class="burse-page__price stats">
+                        Бюджет
+                        <div class="stats__number-wrapper">
+                            1600
+                        </div>
+                        руб.
+                    </div>
+                    <div class="burse-page__btn-wrapper">
+                        <button class="burse-page__btn" data-action="Approve">Опубликовать заявку</button>
+                        <button class="burse-page__btn moved-menu-opener" data-type-menu="AddBurse" data-moved-menu="true"
+                            data-action="Change">Изменить</button>
+                        <button class="burse-page__btn" data-action="hide">Скрыть заявку</button>
+                        <button class="burse-page__btn" data-action="delete">Удалить</button>
+                        <button class="burse-page__btn" data-action="Answer">Ответить на заявку</button>
+                    </div>
+                </div>
+            </div>
+            <div class="burse-page__footer request">
+                <h4 class="request__title">Предложения мастеров</h4>
+                <div class="request__wrapper">
+                    <article class="request__item">
+                        <div class="request__head">
+                            <div class="request__author author">
+                                <a href="" class="author__name">Чернев Генадий</a>
+                                <img src="assets/images/main/pro.svg" alt="" class="author__status">
+                                <div class="rating">
+                                    4.8
+                                    <img src="assets/images/main/star_filled.svg" alt="" class="rating__star">
+                                </div>
+                                <span class="author__date">На Пуговках с 16.03.2020</span>
+                            </div>
+                            <span class="request__price">
+                                Предложение <b>1600р.</b>
+                            </span>
+                        </div>
+                        <div class="request__body">
+                            <p class="request__text">Готов выполнить вашу задачу. Нужно понимать только плотность материала,
+                                т.к. от него очень зависит стоимость изделия. В ваш бюджет выходит толщина кожи 0.7мм или
+                                максимум 1 мм. Если нужно сделать более надежный рекомендую в 1.5 мм, но тут материалы будут
+                                почти весь бюджет, поэтому цена будет 2500р.
+    
+                                Нужно понимать только плотность материала, т.к. от него очень зависит стоимость изделия. В
+                                ваш бюджет выходит толщина кожи 0.7мм или максимум 1 мм.
+                            </p>
+                            <div class="request__img-wrapper">
+                                <a href="assets/images/items/item14.1.jpg" data-fancybox="message1">
+                                    <img src="assets/images/items/item14.1.jpg" alt="" class="request__img">
+                                </a>
+                                <a href="assets/images/items/item14.2.jpg" data-fancybox="message1">
+                                    <img src="assets/images/items/item14.2.jpg" alt="" class="request__img">
+                                </a>
+                                <a href="assets/images/items/item14.3.jpg" data-fancybox="message1">
+                                    <img src="assets/images/items/item14.3.jpg" alt="" class="request__img">
+                                </a>
+                            </div>
+                            <div class="request__btn-wrapper">
+                                <button class="request__btn" data-action="send">Написать сообщение</button>
+                                <button class="request__btn" data-action="accept">Принять предложение</button>
+                                <button class="request__btn" data-action="cancel">Отклонить предложение</button>
+                            </div>
+                        </div>
+                        <div class="request__footer">
+                            <div class="request__message">
+                                <div class="author">
+                                    <a href="" class="author__name">Елена</a>
+                                </div>
+                                <p class="request__text">Готов выполнить вашу задачу. Нужно понимать только плотность
+                                    материала,
+                                    т.к. от него очень зависит стоимость изделия.
+                                </p>
+                                <div class="request__img-wrapper">
+                                    <a href="assets/images/items/item13.1.png" data-fancybox="message2">
+                                        <img src="assets/images/items/item13.1.png" alt="" class="request__img">
+                                    </a>
+                                    <a href="assets/images/items/item13.2.png" data-fancybox="message2">
+                                        <img src="assets/images/items/item13.2.png" alt="" class="request__img">
+                                    </a>
+                                    <a href="assets/images/items/item13.3.png" data-fancybox="message2">
+                                        <img src="assets/images/items/item13.3.png" alt="" class="request__img">
+                                    </a>
+                                </div>
+                                <span class="request__date">
+                                    16.03.2020 12:40
+                                </span>
+                            </div>
+                            <form action="" class="request__input-wrapper">
+                                <input type="text" class="request__input" placeholder="Введите сообщение">
+                                <div class="request__photo-wrapper"></div>
+                                <button class="request__btn">Отправить сообщение</button>
+                                <label for="file__message1">
+                                    Прикрепить файлы
+                                    <input type="file" name="file" class="file__message"multiple accept="image/png, image/jpeg" id="file__message1">
+                                </label>
+                            </form>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- Slider main container -->
         <div class="swiper main-swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper ">
@@ -1629,7 +2108,6 @@
                 <p class="last-view__subtitle hgroup__subtitle">  
                     Вы смотрели 
                 </p>
-                <a href="" class="last-view__btn">Показать все</a>
             </div>
             <div class="last-view__body">
                 <a href="" class="last-view__item" data-id-item="">
@@ -2039,9 +2517,9 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="assets/js/main.js" type="module" ></script>
-    <script src="assets/js/catalog.js" type="module"></script>
-    <script src="assets/js/burse.js" type="module"></script>
+    <script src="assets/js/burse-page.js" type="module"></script>
 </body>
 
 </html>
